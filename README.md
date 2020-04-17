@@ -1,4 +1,4 @@
-# Seagull Team Six
+# Ludum Dare 46
 
 WIP
 
