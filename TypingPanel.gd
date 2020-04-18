@@ -14,7 +14,7 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey and not event.is_pressed():
+	if visible and event is InputEventKey and not event.is_pressed():
 		var a: InputEventKey = event
 		var key_press_string = OS.get_scancode_string(a.scancode)
 		var next_character = text_to_type.substr(current_character_index, 1)
@@ -24,4 +24,5 @@ func _input(event: InputEvent) -> void:
 		else:
 			print("INCORRECTLY TYPED %s instead of %s" % [key_press_string, next_character])
 
-	get_tree().set_input_as_handled()
+	if visible:
+		get_tree().set_input_as_handled()
