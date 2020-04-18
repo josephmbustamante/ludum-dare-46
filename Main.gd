@@ -10,7 +10,7 @@ var currently_selected_object_index: int = -1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	currently_selected_object_index = -1
 
 
 func _unhandled_input(event: InputEvent) -> void:

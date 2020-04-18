@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://FontSize42.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/FontSize42.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/uipack_fixed/Vector/UIpack_vector.svg" type="Texture" id=2]
 [ext_resource path="res://UI/SelectedObjectNotifier.gd" type="Script" id=3]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "hover"
 length = 2.0
 loop = true
@@ -21,7 +21,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, -10 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
 region = Rect2( 440, 444, 52, 48 )
 
@@ -29,11 +29,11 @@ region = Rect2( 440, 444, 52, 48 )
 script = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/hover = SubResource( 2 )
+anims/hover = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.25, 0.25 )
-texture = SubResource( 1 )
+texture = SubResource( 2 )
 
 [node name="Label" type="Label" parent="Sprite"]
 anchor_right = 1.0
