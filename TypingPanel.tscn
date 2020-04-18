@@ -74,7 +74,7 @@ margin_right = 812.0
 margin_bottom = 106.0
 rect_scale = Vector2( 0.4, 0.4 )
 custom_fonts/normal_font = ExtResource( 3 )
-text = "I MISSED YOUR LAST POINT. COULD YOU REPEAT THAT?"
+text = "I missed your last point. Could you repeat that?"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -89,8 +89,8 @@ rect_scale = Vector2( 0.4, 0.4 )
 custom_fonts/normal_font = ExtResource( 3 )
 custom_colors/default_color = Color( 0.396078, 0.392157, 0.443137, 1 )
 bbcode_enabled = true
-bbcode_text = "THEN YOU SHOULD TRY LISTENING BETTER NEXT TIME, KAREN."
-text = "THEN YOU SHOULD TRY LISTENING BETTER NEXT TIME, KAREN."
+bbcode_text = "Then you should try listening better next time, Karen."
+text = "Then you should try listening better next time, Karen."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
