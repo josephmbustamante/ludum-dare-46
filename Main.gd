@@ -2,7 +2,8 @@ extends Node2D
 
 
 onready var selected_object_notifier = $SelectedObjectNotifier
-onready var meeting = $Meeting
+onready var meeting_manager = $MeetingManager
+onready var meeting_display = $CanvasLayer/GameUI/MarginContainer/Rows/BottomRow/MeetingDisplay
 
 
 var interactable_objects: Array = []
@@ -12,8 +13,8 @@ var currently_selected_object_index: int = -1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	currently_selected_object_index = -1
-	meeting.start_meeting()
-	$CanvasLayer/GameUI/MarginContainer/Rows/BottomRow/MeetingDisplay.set_meeting_display(meeting)
+	meeting_manager.begin_new_meeting_timer()
+	meeting_manager.connect("meeting_started", meeting_display, "set_meeting_display")
 
 
 func _unhandled_input(event: InputEvent) -> void:

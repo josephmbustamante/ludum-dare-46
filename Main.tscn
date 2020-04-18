@@ -8,7 +8,7 @@
 [ext_resource path="res://TypingPanel.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Main.gd" type="Script" id=7]
 [ext_resource path="res://UI/SelectedObjectNotifier.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Meeting.tscn" type="PackedScene" id=9]
+[ext_resource path="res://UI/MeetingManager.tscn" type="PackedScene" id=9]
 [ext_resource path="res://UI/MeetingDisplay.tscn" type="PackedScene" id=10]
 
 [node name="Main" type="Node2D"]
@@ -35,7 +35,7 @@ position = Vector2( 204, 120 )
 current = true
 zoom = Vector2( 0.4, 0.4 )
 
-[node name="Meeting" parent="." instance=ExtResource( 9 )]
+[node name="MeetingManager" parent="." instance=ExtResource( 9 )]
 
 [node name="YSort" type="YSort" parent="."]
 
