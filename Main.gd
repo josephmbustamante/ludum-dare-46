@@ -2,6 +2,7 @@ extends Node2D
 
 
 onready var selected_object_notifier = $SelectedObjectNotifier
+onready var meeting = $Meeting
 
 
 var interactable_objects: Array = []
@@ -11,6 +12,7 @@ var currently_selected_object_index: int = -1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	currently_selected_object_index = -1
+	meeting.start_meeting()
 
 
 func _unhandled_input(event: InputEvent) -> void:

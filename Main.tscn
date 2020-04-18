@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://wall_and_floor_tileset.tres" type="TileSet" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://TypingPanel.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Main.gd" type="Script" id=7]
 [ext_resource path="res://UI/SelectedObjectNotifier.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Meeting.tscn" type="PackedScene" id=9]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 7 )
@@ -32,6 +33,8 @@ tile_data = PoolIntArray( 262148, 0, 0, 262149, 0, 2, 262150, 0, 2, 262151, 0, 2
 position = Vector2( 204, 120 )
 current = true
 zoom = Vector2( 0.4, 0.4 )
+
+[node name="Meeting" parent="." instance=ExtResource( 9 )]
 
 [node name="YSort" type="YSort" parent="."]
 
