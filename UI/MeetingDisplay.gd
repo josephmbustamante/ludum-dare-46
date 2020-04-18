@@ -22,6 +22,9 @@ func set_meeting_display(meeting: Meeting):
 		var participant: Participant = participant_untyped
 		var new_info_scene: ParticipantInfo = participant_info_scene.instance()
 		participants_display.add_child(new_info_scene)
-		new_info_scene.participant_name = participant.first_name + "\n" + participant.last_name
+
+		new_info_scene.update_participant_name(participant.first_name + "\n" + participant.last_name)
 		# new_info_scene.participant_image = ???
-		new_info_scene.participant_engagement = participant.engagement_level
+		new_info_scene.participant_engagement.value = participant.engagement_level
+
+		participant.connect("participant_engagement_level_changed", new_info_scene, "update_participant_engagement_level")

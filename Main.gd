@@ -13,6 +13,7 @@ var currently_selected_object_index: int = -1
 func _ready() -> void:
 	currently_selected_object_index = -1
 	meeting.start_meeting()
+	$CanvasLayer/GameUI/MarginContainer/Rows/BottomRow/MeetingDisplay.set_meeting_display(meeting)
 
 
 func _unhandled_input(event: InputEvent) -> void:
