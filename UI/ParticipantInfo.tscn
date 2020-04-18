@@ -5,7 +5,7 @@
 [ext_resource path="res://UI/FontSize12.tres" type="DynamicFont" id=3]
 [ext_resource path="res://UI/ParticipantInfo.gd" type="Script" id=4]
 
-[sub_resource type="StyleBoxTexture" id=2]
+[sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 304, 104, 112 )
 margin_left = 5.0
@@ -14,11 +14,11 @@ margin_top = 5.0
 margin_bottom = 5.0
 modulate_color = Color( 0.329412, 0.329412, 0.329412, 1 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
 region = Rect2( 16, 172, 18, 14 )
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.870588, 0.85098, 0.305882, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -26,7 +26,7 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.427451, 0.427451, 0.427451, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -37,7 +37,7 @@ border_color = Color( 0, 0, 0, 1 )
 [node name="ParticipantInfo" type="PanelContainer"]
 margin_right = 67.0
 margin_bottom = 44.0
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = SubResource( 1 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -52,7 +52,7 @@ margin_bottom = 39.0
 [node name="ParticipantImage" type="TextureRect" parent="HBoxContainer"]
 margin_right = 18.0
 margin_bottom = 34.0
-texture = SubResource( 3 )
+texture = SubResource( 2 )
 stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
@@ -75,7 +75,7 @@ margin_top = 29.0
 margin_right = 35.0
 margin_bottom = 34.0
 rect_min_size = Vector2( 0, 5 )
-custom_styles/fg = SubResource( 4 )
-custom_styles/bg = SubResource( 5 )
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
 value = 50.0
 percent_visible = false
