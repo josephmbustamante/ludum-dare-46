@@ -28,4 +28,5 @@ func get_meeting_participants() -> Array:
 
 
 func _on_MeetingTickTimer_timeout() -> void:
-	print("Meeting tick!")
+	for participant in participants.get_children():
+		participant.engagement_level -= 0.5
