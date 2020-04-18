@@ -1,11 +1,7 @@
 extends StaticBody2D
 
-enum ObjectTypes {
-	COMPUTER,
-	ROUTER
-}
 
-export (ObjectTypes) var object_type = ObjectTypes.COMPUTER
+export (GlobalEnums.ObjectTypes) var object_type = GlobalEnums.ObjectTypes.COMPUTER
 
 
 func interact() -> int:
