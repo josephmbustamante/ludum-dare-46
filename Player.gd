@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-
+signal player_interacted_with_object()
 signal player_can_interact_with_object(object)
 signal player_cannot_interact_with_object(object)
 
@@ -13,10 +13,13 @@ var movement_direction: Vector2 = Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
 	if movement_direction != Vector2.ZERO:
-		move_and_slide(movement_direction * speed)
+		move_and_slide(movement_direction.normalized() * speed)
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_released("interact"):
+		emit_signal("player_interacted_with_object")
+
 	if event.is_action_pressed("down"):
 		movement_direction.y += 1
 	if event.is_action_pressed("up"):
