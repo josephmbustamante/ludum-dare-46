@@ -1,4 +1,5 @@
 extends Node2D
+class_name Participant
 
 
 export (String) var first_name = ""

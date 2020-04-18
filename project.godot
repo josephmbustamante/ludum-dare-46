@@ -8,9 +8,26 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Meeting",
+"language": "GDScript",
+"path": "res://Meeting.gd"
+}, {
+"base": "Node2D",
+"class": "Participant",
+"language": "GDScript",
+"path": "res://Participant.gd"
+}, {
+"base": "PanelContainer",
+"class": "ParticipantInfo",
+"language": "GDScript",
+"path": "res://UI/ParticipantInfo.gd"
+} ]
 _global_script_class_icons={
-
+"Meeting": "",
+"Participant": "",
+"ParticipantInfo": ""
 }
 
 [application]
