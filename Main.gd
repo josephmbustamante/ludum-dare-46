@@ -39,10 +39,14 @@ func _on_Player_player_can_interact_with_object(object) -> void:
 
 
 func _on_Player_player_cannot_interact_with_object(object) -> void:
-	interactable_objects.remove(object)
-	if interactable_objects.size() == 0:
-		currently_selected_object_index = -1
-		hide_selected_object_notifier()
+	var index = interactable_objects.find(object)
+	if index != -1:
+		interactable_objects.remove(index)
+		# TODO: probably also need to change the currently selected index when we remove something,
+		# but will handle that when it comes up.
+		if interactable_objects.size() == 0:
+			currently_selected_object_index = -1
+			hide_selected_object_notifier()
 
 
 func show_selected_object_notifier(location: Vector2):
