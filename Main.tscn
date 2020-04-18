@@ -110,8 +110,8 @@ margin_right = 1004.0
 margin_bottom = 580.0
 
 [node name="MeetingDisplay" parent="CanvasLayer/GameUI/MarginContainer/Rows/BottomRow" instance=ExtResource( 10 )]
-margin_left = 425.0
-margin_right = 579.0
+margin_left = 338.0
+margin_right = 665.0
 margin_bottom = 34.0
 [connection signal="player_can_interact_with_object" from="YSort/Player" to="." method="_on_Player_player_can_interact_with_object"]
 [connection signal="player_cannot_interact_with_object" from="YSort/Player" to="." method="_on_Player_player_cannot_interact_with_object"]

@@ -1,7 +1,8 @@
 extends VBoxContainer
 
 
-onready var meeting_info_label = $MeetingInfoLabel
+onready var meeting_info_label = $HBoxContainer/MeetingInfoLabel
+onready var meeting_duration_label = $HBoxContainer/MeetingDurationLabel
 onready var participants_display = $ParticipantsDisplay
 
 
@@ -12,15 +13,23 @@ const NO_MEETING_TEXT = "There is no meeting currently running."
 
 
 func _ready() -> void:
-	meeting_info_label.text = NO_MEETING_TEXT + " Next meeting begins in 10..."
+	set_time_until_next_meeting_text(10)
 
 
 func set_time_until_next_meeting_text(time_until_next_meeting: int):
-	meeting_info_label.text = NO_MEETING_TEXT + " Next meeting begins in %d..." % time_until_next_meeting
+	meeting_info_label.text = NO_MEETING_TEXT
+	meeting_duration_label.text = " Next meeting begins in %d..." % time_until_next_meeting
+
+
+func set_time_remaining_in_meeting_text(time_remaining_in_meeting: int):
+	meeting_duration_label.text = "%d seconds remaining..." % time_remaining_in_meeting
 
 
 func set_meeting_display(meeting: Meeting):
 	meeting_info_label.text = meeting.meeting_name
+	set_time_remaining_in_meeting_text(meeting.meeting_duration)
+
+	meeting.connect("meeting_duration_changed", self, "set_time_remaining_in_meeting_text")
 
 	for participant_untyped in meeting.get_meeting_participants():
 		var participant: Participant = participant_untyped
