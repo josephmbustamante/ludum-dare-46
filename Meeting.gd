@@ -1,7 +1,7 @@
 extends Node2D
 class_name Meeting
 
-export (String) var meeting_name = ""
+export (String) var meeting_name = "Meeting Name Goes Here"
 
 
 onready var meeting_tick_timer = $MeetingTickTimer

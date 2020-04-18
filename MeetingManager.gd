@@ -3,6 +3,7 @@ extends Node2D
 
 signal meeting_started(meeting)
 signal meeting_finished
+signal time_until_next_meeting_changed(seconds_remaining)
 
 
 onready var new_meeting_timer = $NewMeetingTimer
@@ -43,6 +44,7 @@ func get_current_meeting() -> Meeting:
 
 func _on_NewMeetingTimer_timeout() -> void:
 	time_until_next_meeting -= 1
+	emit_signal("time_until_next_meeting_changed", time_until_next_meeting)
 	if time_until_next_meeting == 0:
 		start_meeting()
 		new_meeting_timer.stop()

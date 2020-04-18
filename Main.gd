@@ -15,6 +15,7 @@ func _ready() -> void:
 	currently_selected_object_index = -1
 	meeting_manager.begin_new_meeting_timer()
 	meeting_manager.connect("meeting_started", meeting_display, "set_meeting_display")
+	meeting_manager.connect("time_until_next_meeting_changed", meeting_display, "set_time_until_next_meeting_text")
 
 
 func _unhandled_input(event: InputEvent) -> void:

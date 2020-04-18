@@ -12,7 +12,11 @@ const NO_MEETING_TEXT = "There is no meeting currently running."
 
 
 func _ready() -> void:
-	meeting_info_label.text = NO_MEETING_TEXT
+	meeting_info_label.text = NO_MEETING_TEXT + " Next meeting begins in 10..."
+
+
+func set_time_until_next_meeting_text(time_until_next_meeting: int):
+	meeting_info_label.text = NO_MEETING_TEXT + " Next meeting begins in %d..." % time_until_next_meeting
 
 
 func set_meeting_display(meeting: Meeting):
