@@ -1,6 +1,10 @@
 extends KinematicBody2D
 
 
+signal player_can_interact_with_object(object)
+signal player_cannot_interact_with_object(object)
+
+
 export (int) var speed = 100
 
 
@@ -31,3 +35,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_released("right"):
 		movement_direction.x -= 1
 
+
+
+func _on_ObjectInteractionRadius_body_entered(body: Node) -> void:
+	if body.has_method("interact"):
+		emit_signal("player_can_interact_with_object", body)
+
+
+func _on_ObjectInteractionRadius_body_exited(body: Node) -> void:
+	if body.has_method("interact"):
+		emit_signal("player_cannot_interact_with_object", body)
