@@ -2,4 +2,4 @@ extends StaticBody2D
 
 
 func interact():
-	pass
+	print("interacted with the computer!")

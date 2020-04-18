@@ -59,3 +59,4 @@ visible = false
 position = Vector2( 200, 64 )
 [connection signal="player_can_interact_with_object" from="Player" to="." method="_on_Player_player_can_interact_with_object"]
 [connection signal="player_cannot_interact_with_object" from="Player" to="." method="_on_Player_player_cannot_interact_with_object"]
+[connection signal="player_interacted_with_object" from="Player" to="." method="_on_Player_player_interacted_with_object"]

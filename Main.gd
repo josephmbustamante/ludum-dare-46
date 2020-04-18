@@ -56,3 +56,9 @@ func show_selected_object_notifier(location: Vector2):
 
 func hide_selected_object_notifier():
 	selected_object_notifier.hide()
+
+
+func _on_Player_player_interacted_with_object() -> void:
+	if currently_selected_object_index != -1:
+		var object_to_interact = interactable_objects[currently_selected_object_index]
+		object_to_interact.interact()
