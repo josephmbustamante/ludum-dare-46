@@ -30,6 +30,7 @@ func set_meeting_display(meeting: Meeting):
 	set_time_remaining_in_meeting_text(meeting.meeting_duration)
 
 	meeting.connect("meeting_duration_changed", self, "set_time_remaining_in_meeting_text")
+	meeting.connect("meeting_finished", self, "clear_meeting_display")
 
 	for participant_untyped in meeting.get_meeting_participants():
 		var participant: Participant = participant_untyped
@@ -41,3 +42,8 @@ func set_meeting_display(meeting: Meeting):
 		new_info_scene.participant_engagement.value = participant.engagement_level
 
 		participant.connect("participant_engagement_level_changed", new_info_scene, "update_participant_engagement_level")
+
+
+func clear_meeting_display():
+	for info_scene in participants_display.get_children():
+		info_scene.queue_free()
