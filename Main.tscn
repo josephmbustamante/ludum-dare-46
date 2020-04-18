@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://wall_and_floor_tileset.tres" type="TileSet" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://TypingPanel.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Main.gd" type="Script" id=7]
 [ext_resource path="res://UI/SelectedObjectNotifier.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Router.tscn" type="PackedScene" id=9]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 7 )
@@ -37,9 +38,16 @@ zoom = Vector2( 0.4, 0.4 )
 
 [node name="Objects" type="Node2D" parent="YSort"]
 
-[node name="Table" parent="YSort/Objects" instance=ExtResource( 4 )]
+[node name="ComputerTable" parent="YSort/Objects" instance=ExtResource( 4 )]
 
 [node name="Computer" parent="YSort/Objects" instance=ExtResource( 5 )]
+position = Vector2( 200.132, 95.2938 )
+
+[node name="RouterTable" parent="YSort/Objects" instance=ExtResource( 4 )]
+position = Vector2( 90.7267, 98.7072 )
+
+[node name="Router" parent="YSort/Objects" instance=ExtResource( 9 )]
+position = Vector2( 90.9472, 94.8973 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 200, 136 )
