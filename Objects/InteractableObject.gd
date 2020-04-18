@@ -1,11 +1,12 @@
 extends StaticBody2D
 
 enum ObjectTypes {
-	COMPUTER
+	COMPUTER,
+	ROUTER
 }
 
 export (ObjectTypes) var object_type = ObjectTypes.COMPUTER
 
 
-func interact():
-	print("interacted with the computer!")
+func interact() -> int:
+	return object_type
