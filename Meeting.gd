@@ -7,7 +7,7 @@ signal meeting_finished(point_breakdowns, total_points)
 
 
 export (String) var meeting_name = "Meeting Name Goes Here"
-export (int) var meeting_duration = 10
+export (int) var meeting_duration = 60
 
 export (int) var prompt_completed_points = 10
 export (int) var meeting_finished_base_points = 30
