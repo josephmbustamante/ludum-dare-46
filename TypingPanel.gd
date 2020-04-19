@@ -8,6 +8,7 @@ onready var input_finished_clear_timer = $InputFinishedClearTimer
 
 var text_to_type: String = ""
 var current_character_index: int = -1
+var requires_completion: bool = false
 
 
 signal input_finished
@@ -27,8 +28,9 @@ func show_typing_session():
 	show()
 
 
-func start_typing_session(prompt: Prompt):
+func start_typing_session(prompt: Prompt, requires_completion: bool = false):
 	if prompt != null:
+		self.requires_completion = requires_completion
 		prompt_text.text = prompt.prompt
 		input_text.text = prompt.response
 		text_to_type = prompt.response
@@ -61,7 +63,12 @@ func _input(event: InputEvent) -> void:
 
 		# If we press Enter or Escape, exit, regardless of progress or session
 		if key_code == "Enter" or key_code == "Escape":
-			exit_typing_session()
+			# If enter or escape are hit, we never want the camera to shake (probably).
+			# But we only want to exit the prompt if it doesn't require completion.
+			if not requires_completion:
+				exit_typing_session()
+			else:
+				pass
 
 		# Ignore shift keystrokes
 		if key_code == "Shift":

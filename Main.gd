@@ -49,7 +49,12 @@ func _ready() -> void:
 
 func handle_input_request(prompt, requestor) -> void:
 	current_input_requestor = requestor
-	typing_panel.start_typing_session(prompt)
+	var prompt_requires_completion = false
+
+	if requestor == bed:
+		prompt_requires_completion = true
+
+	typing_panel.start_typing_session(prompt, prompt_requires_completion)
 
 
 func handle_input_complete() -> void:

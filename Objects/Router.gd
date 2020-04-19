@@ -19,9 +19,11 @@ func interact():
 	prompt.response = "reset_router"
 	emit_signal("request_input", prompt)
 
+
 func handle_input_complete(status) -> void:
 	if status == true:
 		set_wifi_level(wifi_level + 20)
+
 
 func set_wifi_level(new_wifi_level):
 	var potential_new_wifi_level = clamp(new_wifi_level, 0 ,100)
