@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 		elif stress_level > 0:
 			var modifier: float = 65 * ((stress_level as float) / 100)
 			actual_speed = speed - modifier
-		print(actual_speed)
+
 		move_and_slide(movement_direction.normalized() * actual_speed)
 	else:
 		animation_player.stop(true)
