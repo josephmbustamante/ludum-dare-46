@@ -1,0 +1,156 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://UI/FontSize24.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/FontSize16.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/uipack_fixed/Vector/UIpack_vector.svg" type="Texture" id=3]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 3 )
+region_rect = Rect2( 624, 312, 200, 56 )
+margin_left = 13.6103
+margin_right = 14.0494
+margin_top = 14.4884
+margin_bottom = 10.098
+modulate_color = Color( 0.52549, 0.541176, 0.584314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[node name="MeetingRecapDisplay" type="PanelContainer"]
+margin_right = 417.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 0, 200 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 13.6103
+margin_top = 14.4884
+margin_right = 402.951
+margin_bottom = 189.902
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+
+[node name="Rows" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 384.0
+margin_bottom = 170.0
+custom_constants/separation = 10
+
+[node name="RecapTitle" type="Label" parent="MarginContainer/Rows"]
+margin_right = 379.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "MEETING RECAP"
+align = 1
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/Rows"]
+margin_top = 32.0
+margin_right = 379.0
+margin_bottom = 36.0
+custom_styles/separator = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BreakdownRows" type="VBoxContainer" parent="MarginContainer/Rows"]
+margin_top = 46.0
+margin_right = 379.0
+margin_bottom = 119.0
+size_flags_vertical = 3
+
+[node name="PointBreakdownRow" type="HBoxContainer" parent="MarginContainer/Rows/BreakdownRows"]
+margin_right = 379.0
+margin_bottom = 15.0
+custom_constants/separation = 20
+alignment = 2
+
+[node name="PointChangeLabel" type="Label" parent="MarginContainer/Rows/BreakdownRows/PointBreakdownRow"]
+margin_left = 152.0
+margin_right = 179.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "+27"
+
+[node name="ReasonLabel" type="Label" parent="MarginContainer/Rows/BreakdownRows/PointBreakdownRow"]
+margin_left = 199.0
+margin_right = 379.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "Responded to prompts"
+
+[node name="PointBreakdownRow2" type="HBoxContainer" parent="MarginContainer/Rows/BreakdownRows"]
+margin_top = 19.0
+margin_right = 379.0
+margin_bottom = 34.0
+custom_constants/separation = 20
+alignment = 2
+
+[node name="PointChangeLabel" type="Label" parent="MarginContainer/Rows/BreakdownRows/PointBreakdownRow2"]
+margin_left = 152.0
+margin_right = 179.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "+27"
+
+[node name="ReasonLabel" type="Label" parent="MarginContainer/Rows/BreakdownRows/PointBreakdownRow2"]
+margin_left = 199.0
+margin_right = 379.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "Responded to prompts"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/Rows"]
+margin_top = 129.0
+margin_right = 379.0
+margin_bottom = 133.0
+custom_styles/separator = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TotalPointsRow" type="HBoxContainer" parent="MarginContainer/Rows"]
+margin_top = 143.0
+margin_right = 379.0
+margin_bottom = 165.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TotalPointsLabel" type="Label" parent="MarginContainer/Rows/TotalPointsRow"]
+margin_right = 182.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "TOTAL POINTS:"
+
+[node name="TotalPointsValue" type="Label" parent="MarginContainer/Rows/TotalPointsRow"]
+margin_left = 186.0
+margin_right = 242.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "2398"

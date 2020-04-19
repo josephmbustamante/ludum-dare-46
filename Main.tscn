@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://wall_and_floor_tileset.tres" type="TileSet" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Objects/Router.tscn" type="PackedScene" id=11]
 [ext_resource path="res://RoomManager.tscn" type="PackedScene" id=12]
 [ext_resource path="res://UI/RoomDisplay.tscn" type="PackedScene" id=13]
+[ext_resource path="res://UI/PointsDisplay.tscn" type="PackedScene" id=14]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 7 )
@@ -122,10 +123,7 @@ margin_right = 1004.0
 margin_bottom = 580.0
 alignment = 1
 
-[node name="Placeholder" type="VBoxContainer" parent="CanvasLayer/GameUI/MarginContainer/Rows/BottomRow"]
-margin_right = 417.0
-margin_bottom = 96.0
-size_flags_horizontal = 3
+[node name="PointsDisplay" parent="CanvasLayer/GameUI/MarginContainer/Rows/BottomRow" instance=ExtResource( 14 )]
 
 [node name="MeetingDisplay" parent="CanvasLayer/GameUI/MarginContainer/Rows/BottomRow" instance=ExtResource( 10 )]
 margin_left = 421.0
