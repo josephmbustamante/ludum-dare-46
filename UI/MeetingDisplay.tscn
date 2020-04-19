@@ -26,6 +26,7 @@ expand_margin_bottom = 1.0
 margin_left = 89.0
 margin_right = 298.0
 margin_bottom = 78.0
+custom_constants/separation = 5
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -45,9 +46,9 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_top = 19.0
+margin_top = 20.0
 margin_right = 327.0
-margin_bottom = 30.0
+margin_bottom = 31.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -83,7 +84,8 @@ __meta__ = {
 }
 
 [node name="ParticipantsDisplay" type="HBoxContainer" parent="."]
-margin_top = 34.0
+margin_top = 36.0
 margin_right = 327.0
-margin_bottom = 34.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 120, 60 )
 alignment = 1
