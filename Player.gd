@@ -6,7 +6,7 @@ signal player_cannot_interact_with_object(object)
 signal player_stress_level_changed(new_stress_level)
 
 
-export (int) var speed = 100
+export (int) var speed = 80
 
 
 onready var stress_tick_timer = $StressTickTimer
@@ -29,13 +29,13 @@ func _physics_process(delta: float) -> void:
 
 		# if our stress level is 100, move at 20% speed
 		if stress_level == 100:
-			actual_speed = 20
+			actual_speed = 15
 
 		# if our stress level is between 0 and 100, move at a variable rate between 20% and 100%
 		elif stress_level > 0:
-			var modifier: float = 80 * ((stress_level as float) / 100)
-			actual_speed = 100.0 - modifier
-
+			var modifier: float = 65 * ((stress_level as float) / 100)
+			actual_speed = speed - modifier
+		print(actual_speed)
 		move_and_slide(movement_direction.normalized() * actual_speed)
 	else:
 		animation_player.stop(true)
@@ -81,4 +81,4 @@ func _on_ObjectInteractionRadius_body_exited(body: Node) -> void:
 
 
 func _on_StressTickTimer_timeout() -> void:
-	set_stress_level(stress_level + 2)
+	set_stress_level(stress_level + 4)
