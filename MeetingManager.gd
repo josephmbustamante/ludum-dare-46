@@ -6,6 +6,9 @@ signal meeting_finished(point_breakdowns, total_points)
 signal time_until_next_meeting_changed(seconds_remaining)
 
 
+export (int) var time_between_meetings: int = 10 # seconds
+
+
 onready var new_meeting_timer = $NewMeetingTimer
 
 
@@ -14,7 +17,6 @@ var player_points: int = 0
 var meeting_scene = preload("res://Meeting.tscn")
 var meeting: Meeting = null
 
-var time_between_meetings: int = 10 # seconds
 var time_until_next_meeting: int = -1 #seconds
 
 
@@ -32,14 +34,11 @@ func start_meeting() -> Meeting:
 	return meeting
 
 
-func finish_meeting():
+func finish_meeting(point_breakdowns: Array, total_points: int):
 	if meeting != null:
 		meeting.queue_free()
 		meeting = null
-	emit_signal("meeting_finished", [
-			{ "reason": "Typed characters", "value": 30 },
-			{ "reason": "Finished prompts", "value": 100 }
-		], 130)
+	emit_signal("meeting_finished", point_breakdowns, total_points)
 	begin_new_meeting_timer()
 
 

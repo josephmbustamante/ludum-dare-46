@@ -46,6 +46,6 @@ func set_meeting_display(meeting: Meeting):
 		participant.connect("participant_status_changed", new_info_scene, "update_participant_status")
 
 
-func clear_meeting_display():
+func clear_meeting_display(_point_breakdowns: Array, _total_points: int):
 	for info_scene in participants_display.get_children():
 		info_scene.queue_free()
