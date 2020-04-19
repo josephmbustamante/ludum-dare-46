@@ -15,6 +15,7 @@ func _ready() -> void:
 
 
 func set_wifi_level(new_wifi_level):
+	print("setting wifi level!")
 	var potential_new_wifi_level = clamp(new_wifi_level, 0 ,100)
 	if potential_new_wifi_level != wifi_level:
 		wifi_level = potential_new_wifi_level
@@ -22,4 +23,4 @@ func set_wifi_level(new_wifi_level):
 
 
 func _on_RoomManagerTickTimer_timeout() -> void:
-	wifi_level -= 1
+	set_wifi_level(wifi_level - 1)

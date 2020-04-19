@@ -12,7 +12,7 @@
 [ext_resource path="res://UI/MeetingDisplay.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Objects/Router.tscn" type="PackedScene" id=11]
 [ext_resource path="res://RoomManager.tscn" type="PackedScene" id=12]
-[ext_resource path="res://UI/ColorProgressBar.tscn" type="PackedScene" id=13]
+[ext_resource path="res://UI/RoomDisplay.tscn" type="PackedScene" id=13]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 7 )
@@ -132,27 +132,7 @@ margin_left = 338.0
 margin_right = 665.0
 margin_bottom = 34.0
 
-[node name="RoomDisplay" type="HBoxContainer" parent="CanvasLayer/GameUI/MarginContainer/Rows/BottomRow"]
-margin_left = 669.0
-margin_right = 1004.0
-margin_bottom = 34.0
-size_flags_horizontal = 3
-alignment = 2
-
-[node name="WifiDisplay" type="VBoxContainer" parent="CanvasLayer/GameUI/MarginContainer/Rows/BottomRow/RoomDisplay"]
-margin_left = 245.0
-margin_right = 335.0
-margin_bottom = 34.0
-
-[node name="WifiLabel" type="Label" parent="CanvasLayer/GameUI/MarginContainer/Rows/BottomRow/RoomDisplay/WifiDisplay"]
-margin_right = 90.0
-margin_bottom = 15.0
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
-text = "WIFI LEVEL"
-
-[node name="ProgressBar" parent="CanvasLayer/GameUI/MarginContainer/Rows/BottomRow/RoomDisplay/WifiDisplay" instance=ExtResource( 13 )]
+[node name="RoomDisplay" parent="CanvasLayer/GameUI/MarginContainer/Rows/BottomRow" instance=ExtResource( 13 )]
 [connection signal="player_can_interact_with_object" from="YSort/Player" to="." method="_on_Player_player_can_interact_with_object"]
 [connection signal="player_cannot_interact_with_object" from="YSort/Player" to="." method="_on_Player_player_cannot_interact_with_object"]
 [connection signal="player_interacted_with_object" from="YSort/Player" to="." method="_on_Player_player_interacted_with_object"]

@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://UI/FontSize16.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/ColorProgressBar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/RoomDisplay.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0313726, 0.501961, 0.0588235, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.235294, 0.235294, 0.235294, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+
+[node name="RoomDisplay" type="HBoxContainer"]
+margin_left = 669.0
+margin_right = 1004.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+alignment = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WifiDisplay" type="VBoxContainer" parent="."]
+margin_left = 245.0
+margin_right = 335.0
+margin_bottom = 34.0
+
+[node name="WifiLabel" type="Label" parent="WifiDisplay"]
+margin_right = 90.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "WIFI LEVEL"
+
+[node name="ProgressBar" parent="WifiDisplay" instance=ExtResource( 2 )]
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )

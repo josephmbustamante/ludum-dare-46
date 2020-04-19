@@ -1,10 +1,12 @@
 extends Node2D
 
 
-onready var selected_object_notifier = $SelectedObjectNotifier
 onready var meeting_manager = $MeetingManager
-onready var meeting_display = $CanvasLayer/GameUI/MarginContainer/Rows/BottomRow/MeetingDisplay
+onready var room_manager = $RoomManager
 
+onready var selected_object_notifier = $SelectedObjectNotifier
+onready var meeting_display = $CanvasLayer/GameUI/MarginContainer/Rows/BottomRow/MeetingDisplay
+onready var room_display = $CanvasLayer/GameUI/MarginContainer/Rows/BottomRow/RoomDisplay
 onready var typing_panel = $TypingPanel
 
 
@@ -15,14 +17,18 @@ var currently_selected_object_index: int = -1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	currently_selected_object_index = -1
+
 	meeting_manager.begin_new_meeting_timer()
 	meeting_manager.connect("meeting_started", self, "handle_meeting_started")
 	meeting_manager.connect("time_until_next_meeting_changed", meeting_display, "set_time_until_next_meeting_text")
+
+	room_manager.connect("wifi_level_changed", room_display, "handle_wifi_level_changed")
 
 
 func handle_meeting_started(meeting: Meeting):
 	meeting_display.set_meeting_display(meeting)
 	typing_panel.start_typing_session()
+
 
 
 func _unhandled_input(event: InputEvent) -> void:
