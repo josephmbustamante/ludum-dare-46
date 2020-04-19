@@ -33,13 +33,19 @@ _global_script_classes=[ {
 "class": "RoomManager",
 "language": "GDScript",
 "path": "res://RoomManager.gd"
+}, {
+"base": "StaticBody2D",
+"class": "Router",
+"language": "GDScript",
+"path": "res://Objects/Router.gd"
 } ]
 _global_script_class_icons={
 "Meeting": "",
 "Participant": "",
 "ParticipantInfo": "",
 "Prompt": "",
-"RoomManager": ""
+"RoomManager": "",
+"Router": ""
 }
 
 [application]
