@@ -40,9 +40,10 @@ func set_meeting_display(meeting: Meeting):
 		new_info_scene.update_participant_name(participant.first_name + "\n" + participant.last_name)
 		# new_info_scene.participant_image = ???
 		new_info_scene.participant_engagement.value = participant.engagement_level
+		new_info_scene.update_participant_status(participant.status)
 
 		participant.connect("participant_engagement_level_changed", new_info_scene, "update_participant_engagement_level")
-
+		participant.connect("participant_status_changed", new_info_scene, "update_participant_status")
 
 func clear_meeting_display():
 	for info_scene in participants_display.get_children():
