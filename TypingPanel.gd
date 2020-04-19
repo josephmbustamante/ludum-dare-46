@@ -19,21 +19,20 @@ func _ready() -> void:
 
 
 func show_typing_session():
-	print(current_character_index)
 	# If we have no session in progress, then start a new one.
 	# If we do have a session in progress, resume it.
-	if current_character_index == -1:
-		start_typing_session()
+	#if current_character_index == -1:
+	#	reset_typing_session()
 	show()
 
 
-func start_typing_session():
-	prompt_text.text = "Help! What color is the sky?"
-	var text_to_input = "Everyone knows it is blue."
-	input_text.text = text_to_input
-	text_to_type = text_to_input
-
-	current_character_index = 0
+func start_typing_session(prompt: Prompt):
+	if prompt != null:
+		prompt_text.text = prompt.prompt
+		input_text.text = prompt.response
+		text_to_type = prompt.response
+		current_character_index = 0
+		visible = true
 
 
 func reset_typing_session():
@@ -95,4 +94,5 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_InputFinishedClearTimer_timeout() -> void:
+	hide()
 	reset_typing_session()

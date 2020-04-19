@@ -4,12 +4,15 @@ extends Node2D
 onready var selected_object_notifier = $SelectedObjectNotifier
 onready var meeting_manager = $MeetingManager
 onready var meeting_display = $CanvasLayer/GameUI/MarginContainer/Rows/BottomRow/MeetingDisplay
+onready var computer = $YSort/Objects/Computer
+onready var router = $YSort/Objects/Router
 
 onready var typing_panel = $TypingPanel
 
 
 var interactable_objects: Array = []
 var currently_selected_object_index: int = -1
+var current_input_requestor = null;
 
 
 # Called when the node enters the scene tree for the first time.
@@ -18,11 +21,22 @@ func _ready() -> void:
 	meeting_manager.begin_new_meeting_timer()
 	meeting_manager.connect("meeting_started", self, "handle_meeting_started")
 	meeting_manager.connect("time_until_next_meeting_changed", meeting_display, "set_time_until_next_meeting_text")
+	computer.connect("request_input", self, "handle_input_request", [computer])
+	typing_panel.connect("input_finished", self, "handle_input_complete")
 
-
+func handle_input_request(prompt, requestor) -> void:
+	current_input_requestor = requestor
+	typing_panel.start_typing_session(prompt)
+	
+func handle_input_complete() -> void:
+	print("Handling input complete")
+	current_input_requestor.handle_input_complete(true)
+	current_input_requestor = null
+	
 func handle_meeting_started(meeting: Meeting):
 	meeting_display.set_meeting_display(meeting)
-	typing_panel.start_typing_session()
+	computer.set_current_meeting(meeting)
+	typing_panel.reset_typing_session()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -81,7 +95,6 @@ func handle_object_interaction(object_type: int):
 	match object_type:
 		GlobalEnums.ObjectTypes.COMPUTER:
 			print("computer")
-			typing_panel.show_typing_session()
 			return
 		GlobalEnums.ObjectTypes.ROUTER:
 			print("router")

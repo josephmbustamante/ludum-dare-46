@@ -35,3 +35,14 @@ func _on_MeetingTickTimer_timeout() -> void:
 	if meeting_duration == 0:
 		finish_meeting()
 		emit_signal("meeting_finished")
+
+func get_oldest_prompt() -> Prompt:
+	var prompt = Prompt.new()
+	prompt.prompt = "Yo! Mute Joe, please!"
+	prompt.response = "Ok, done."
+	return prompt
+
+func handle_prompt_completed(prompt: Prompt, success: bool) -> void:
+	print("Handling completed prompt")
+	for participant in participants.get_children():
+		participant.engagement_level += 5
