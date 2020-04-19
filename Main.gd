@@ -76,7 +76,7 @@ func handle_object_interaction(object_type: int):
 	match object_type:
 		GlobalEnums.ObjectTypes.COMPUTER:
 			print("computer")
-			typing_panel.show()
+			typing_panel.show_typing_session()
 			return
 		GlobalEnums.ObjectTypes.ROUTER:
 			print("router")
