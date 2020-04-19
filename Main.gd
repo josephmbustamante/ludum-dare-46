@@ -20,6 +20,8 @@ var interactable_objects: Array = []
 var currently_selected_object_index: int = -1
 var current_input_requestor = null;
 
+var points: int = 0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -54,9 +56,14 @@ func handle_meeting_started(meeting: Meeting):
 
 
 func handle_meeting_finished(point_breakdowns: Array, total_points: int):
+	var new_point_value = total_points + points
+	if new_point_value < 0:
+		new_point_value = 0
+	points = new_point_value
+
 	computer.set_current_meeting(null)
 	meeting_recap_display.set_meeting_recap_display(point_breakdowns, total_points)
-	points_display.add_points(total_points)
+	points_display.update_points(points)
 
 
 func _unhandled_input(event: InputEvent) -> void:
