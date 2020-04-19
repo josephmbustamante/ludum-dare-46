@@ -15,13 +15,14 @@ signal input_finished
 
 func _ready() -> void:
 	text_to_type = input_text.text
-	current_character_index = 0
+	current_character_index = -1
 
 
 func show_typing_session():
+	print(current_character_index)
 	# If we have no session in progress, then start a new one.
 	# If we do have a session in progress, resume it.
-	if current_character_index != -1:
+	if current_character_index == -1:
 		start_typing_session()
 	show()
 
