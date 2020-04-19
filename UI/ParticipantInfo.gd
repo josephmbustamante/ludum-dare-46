@@ -2,9 +2,9 @@ extends PanelContainer
 class_name ParticipantInfo
 
 
-onready var participant_image = $HBoxContainer/ParticipantImage
-onready var participant_name = $HBoxContainer/VBoxContainer/ParticipantName
-onready var participant_engagement = $HBoxContainer/VBoxContainer/ParticipantEngagement
+onready var participant_image = $MarginContainer/HBoxContainer/ParticipantImage
+onready var participant_name = $MarginContainer/HBoxContainer/VBoxContainer/ParticipantName
+onready var participant_engagement = $MarginContainer/HBoxContainer/VBoxContainer/ParticipantEngagement
 
 
 func update_participant_name(participant_name: String):
