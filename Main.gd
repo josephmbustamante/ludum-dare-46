@@ -9,6 +9,7 @@ onready var router = $YSort/Objects/Router
 
 onready var meeting_display = $CanvasLayer/GameUI/MarginContainer/Rows/BottomRow/MeetingDisplay
 onready var room_display = $CanvasLayer/GameUI/MarginContainer/Rows/BottomRow/RoomDisplay
+onready var meeting_recap_display = $CanvasLayer/GameUI/MarginContainer/Rows/MiddleRow/VBoxContainer/MeetingRecapDisplay
 
 onready var selected_object_notifier = $SelectedObjectNotifier
 onready var typing_panel = $TypingPanel
@@ -53,6 +54,7 @@ func handle_meeting_started(meeting: Meeting):
 
 func handle_meeting_finished():
 	computer.set_current_meeting(null)
+	meeting_recap_display.set_meeting_recap_display([], 300)
 
 
 func _unhandled_input(event: InputEvent) -> void:
