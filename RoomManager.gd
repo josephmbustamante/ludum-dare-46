@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name RoomManager
 
 signal wifi_level_changed(new_wifi_level)
 

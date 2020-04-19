@@ -30,6 +30,7 @@ func _ready() -> void:
 	room_manager.connect("wifi_level_changed", room_display, "handle_wifi_level_changed")
 
 	computer.connect("request_input", self, "handle_input_request", [computer])
+	router.connect("request_input", self, "handle_input_request", [router])
 	typing_panel.connect("input_finished", self, "handle_input_complete")
 
 
