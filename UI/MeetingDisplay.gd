@@ -1,8 +1,8 @@
 extends VBoxContainer
 
 
-onready var meeting_info_label = $HBoxContainer/MeetingInfoLabel
-onready var meeting_duration_label = $HBoxContainer/MeetingDurationLabel
+onready var meeting_info_label = $MeetingInfoLabel
+onready var meeting_duration_label = $MeetingDurationLabel
 onready var participants_display = $ParticipantsDisplay
 
 

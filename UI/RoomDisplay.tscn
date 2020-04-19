@@ -1,0 +1,104 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://UI/FontSize16.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/ColorProgressBar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/RoomDisplay.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0313726, 0.501961, 0.0588235, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.235294, 0.235294, 0.235294, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.329412, 0.431373, 0.901961, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.235294, 0.235294, 0.235294, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+
+[node name="RoomDisplay" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+custom_constants/separation = 20
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WifiDisplay" type="HBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 15.0
+alignment = 2
+
+[node name="WifiLabel" type="Label" parent="WifiDisplay"]
+margin_left = 740.0
+margin_right = 870.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 130, 0 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "WIFI STRENGTH"
+uppercase = true
+
+[node name="WifiBar" parent="WifiDisplay" instance=ExtResource( 2 )]
+margin_left = 874.0
+margin_top = 0.0
+margin_right = 1024.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 150, 0 )
+size_flags_horizontal = 1
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+
+[node name="StressDisplay" type="HBoxContainer" parent="."]
+margin_top = 35.0
+margin_right = 1024.0
+margin_bottom = 50.0
+alignment = 2
+
+[node name="StressLabel" type="Label" parent="StressDisplay"]
+margin_left = 740.0
+margin_right = 870.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 130, 0 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "STRESS LEVEL"
+uppercase = true
+
+[node name="StressBar" parent="StressDisplay" instance=ExtResource( 2 )]
+margin_left = 874.0
+margin_top = 0.0
+margin_right = 1024.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 150, 0 )
+size_flags_horizontal = 1
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+high_color = Color( 0.329412, 0.431373, 0.901961, 1 )
+medium_color = Color( 0.443137, 0.14902, 0.870588, 1 )
+low_color = Color( 0.588235, 0.160784, 0.72549, 1 )
+very_low_color = Color( 0.968627, 0.054902, 0.443137, 1 )
