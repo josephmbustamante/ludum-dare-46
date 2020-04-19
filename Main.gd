@@ -1,6 +1,8 @@
 extends Node2D
 
 
+onready var camera = $Camera2D
+
 onready var meeting_manager = $MeetingManager
 onready var room_manager = $RoomManager
 
@@ -38,6 +40,7 @@ func _ready() -> void:
 	computer.connect("request_input", self, "handle_input_request", [computer])
 	router.connect("request_input", self, "handle_input_request", [router])
 	typing_panel.connect("input_finished", self, "handle_input_complete")
+	typing_panel.connect("input_incorrect", camera, "add_trauma")
 
 
 func handle_input_request(prompt, requestor) -> void:

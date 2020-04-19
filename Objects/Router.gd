@@ -1,12 +1,12 @@
 extends StaticBody2D
 class_name Router
 
+
 export (GlobalEnums.ObjectTypes) var object_type = GlobalEnums.ObjectTypes.ROUTER
+export (int, 0, 100) var wifi_level: int = 100 setget set_wifi_level
 
 
 var current_prompt: Prompt = null
-
-export (int, 0, 100) var wifi_level: int = 100 setget set_wifi_level
 
 
 signal request_input(prompt)

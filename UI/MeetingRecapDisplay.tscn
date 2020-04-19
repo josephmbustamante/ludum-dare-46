@@ -70,7 +70,7 @@ __meta__ = {
 [node name="MarginContainer" type="MarginContainer" parent="."]
 margin_left = 13.6103
 margin_top = 14.4884
-margin_right = 265.61
+margin_right = 265.611
 margin_bottom = 150.488
 custom_constants/margin_right = 5
 custom_constants/margin_top = 5
@@ -81,7 +81,7 @@ custom_constants/margin_bottom = 5
 margin_left = 5.0
 margin_top = 5.0
 margin_right = 247.0
-margin_bottom = 131.0
+margin_bottom = 130.0
 custom_constants/separation = 10
 
 [node name="RecapTitle" type="Label" parent="MarginContainer/Rows"]
