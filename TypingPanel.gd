@@ -63,6 +63,10 @@ func _input(event: InputEvent) -> void:
 		if key_code == "Enter" or key_code == "Escape":
 			exit_typing_session()
 
+		# Ignore shift keystrokes
+		if key_code == "Shift":
+			pass
+
 		# If we aren't currently in a valid typing session, don't allow input
 		elif current_character_index == -1:
 			pass
