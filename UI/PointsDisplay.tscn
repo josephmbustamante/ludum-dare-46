@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
+[ext_resource path="res://UI/PointsDisplay.gd" type="Script" id=1]
 [ext_resource path="res://UI/FontSize16.tres" type="DynamicFont" id=2]
 
 [node name="PointsDisplay" type="VBoxContainer"]
 margin_right = 417.0
 margin_bottom = 96.0
 size_flags_horizontal = 3
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -25,7 +27,7 @@ custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.847059, 0.952941, 0.235294, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
-text = "100"
+text = "0"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

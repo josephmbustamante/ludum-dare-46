@@ -7,6 +7,7 @@ onready var room_manager = $RoomManager
 onready var computer = $YSort/Objects/Computer
 onready var router = $YSort/Objects/Router
 
+onready var points_display = $CanvasLayer/GameUI/MarginContainer/Rows/BottomRow/PointsDisplay
 onready var meeting_display = $CanvasLayer/GameUI/MarginContainer/Rows/BottomRow/MeetingDisplay
 onready var room_display = $CanvasLayer/GameUI/MarginContainer/Rows/BottomRow/RoomDisplay
 onready var meeting_recap_display = $CanvasLayer/GameUI/MarginContainer/Rows/MiddleRow/VBoxContainer/MeetingRecapDisplay
@@ -55,6 +56,7 @@ func handle_meeting_started(meeting: Meeting):
 func handle_meeting_finished(point_breakdowns: Array, total_points: int):
 	computer.set_current_meeting(null)
 	meeting_recap_display.set_meeting_recap_display(point_breakdowns, total_points)
+	points_display.add_points(total_points)
 
 
 func _unhandled_input(event: InputEvent) -> void:
