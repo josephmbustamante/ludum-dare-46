@@ -1,25 +1,14 @@
 extends Node2D
-
-
-signal wifi_level_changed(new_wifi_level)
-
-
-export (int, 0, 100) var wifi_level: int = 100 setget set_wifi_level
-
+class_name RoomManager
 
 onready var room_manager_tick_timer = $RoomManagerTickTimer
-
+var router: Router = null
 
 func _ready() -> void:
 	room_manager_tick_timer.start()
 
-
-func set_wifi_level(new_wifi_level):
-	var potential_new_wifi_level = clamp(new_wifi_level, 0 ,100)
-	if potential_new_wifi_level != wifi_level:
-		wifi_level = potential_new_wifi_level
-		emit_signal("wifi_level_changed", wifi_level)
-
+func set_router(new_router: Router):
+	router = new_router
 
 func _on_RoomManagerTickTimer_timeout() -> void:
-	set_wifi_level(wifi_level - 1)
+	router.set_wifi_level(router.wifi_level - 1)

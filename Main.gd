@@ -32,9 +32,11 @@ func _ready() -> void:
 	meeting_manager.connect("meeting_finished", self, "handle_meeting_finished")
 	meeting_manager.connect("time_until_next_meeting_changed", meeting_display, "set_time_until_next_meeting_text")
 
-	room_manager.connect("wifi_level_changed", room_display, "handle_wifi_level_changed")
+	room_manager.set_router(router)
+	router.connect("wifi_level_changed", room_display, "handle_wifi_level_changed")
 
 	computer.connect("request_input", self, "handle_input_request", [computer])
+	router.connect("request_input", self, "handle_input_request", [router])
 	typing_panel.connect("input_finished", self, "handle_input_complete")
 
 
@@ -52,7 +54,6 @@ func handle_input_complete() -> void:
 func handle_meeting_started(meeting: Meeting):
 	meeting_display.set_meeting_display(meeting)
 	computer.set_current_meeting(meeting)
-	typing_panel.reset_typing_session()
 
 
 func handle_meeting_finished(point_breakdowns: Array, total_points: int):
