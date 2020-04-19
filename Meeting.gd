@@ -13,7 +13,6 @@ export (int) var meeting_duration = 60
 onready var meeting_tick_timer = $MeetingTickTimer
 onready var participants = $Participants
 
-
 func start_meeting():
 	meeting_tick_timer.start()
 
@@ -37,12 +36,25 @@ func _on_MeetingTickTimer_timeout() -> void:
 		emit_signal("meeting_finished")
 
 func get_oldest_prompt() -> Prompt:
-	var prompt = Prompt.new()
-	prompt.prompt = "Yo! Mute Joe, please!"
-	prompt.response = "Ok, done."
-	return prompt
+	var oldest_with_question = null
+	for participant in participants.get_children():
+		if participant.current_question_time > 0:
+			if oldest_with_question != null:
+				if oldest_with_question.current_question_time > participant.current_question_time:
+					oldest_with_question = participant
+			else:
+				oldest_with_question = participant
+	if oldest_with_question:
+		var prompt = ParticipantPrompt.new()
+		prompt.prompt = oldest_with_question.current_question.prompt
+		prompt.response = oldest_with_question.current_question.response
+		prompt.participant_last_name = oldest_with_question.last_name
+		return prompt
+	return null
 
-func handle_prompt_completed(prompt: Prompt, success: bool) -> void:
+func handle_prompt_completed(prompt: ParticipantPrompt, success: bool) -> void:
 	print("Handling completed prompt")
 	for participant in participants.get_children():
-		participant.engagement_level += 5
+		if participant.last_name == prompt.participant_last_name:
+			participant.engagement_level += 5
+			participant.clear_question()

@@ -2,6 +2,7 @@ extends Node2D
 
 
 signal meeting_started(meeting)
+signal meeting_finished
 signal time_until_next_meeting_changed(seconds_remaining)
 
 
@@ -33,7 +34,7 @@ func finish_meeting():
 	if meeting != null:
 		meeting.queue_free()
 		meeting = null
-
+	emit_signal("meeting_finished")
 	begin_new_meeting_timer()
 
 

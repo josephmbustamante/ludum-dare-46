@@ -5,9 +5,7 @@ export (GlobalEnums.ObjectTypes) var object_type = GlobalEnums.ObjectTypes.COMPU
 
 
 var current_meeting: Meeting = null
-var current_prompt: Prompt = null
-
-
+var current_prompt: ParticipantPrompt = null
 signal request_input(prompt)
 
 

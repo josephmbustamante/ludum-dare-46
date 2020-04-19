@@ -25,6 +25,7 @@ func _ready() -> void:
 
 	meeting_manager.begin_new_meeting_timer()
 	meeting_manager.connect("meeting_started", self, "handle_meeting_started")
+	meeting_manager.connect("meeting_finished", self, "handle_meeting_finished")
 	meeting_manager.connect("time_until_next_meeting_changed", meeting_display, "set_time_until_next_meeting_text")
 
 	room_manager.connect("wifi_level_changed", room_display, "handle_wifi_level_changed")
@@ -49,6 +50,8 @@ func handle_meeting_started(meeting: Meeting):
 	computer.set_current_meeting(meeting)
 	typing_panel.reset_typing_session()
 
+func handle_meeting_finished():
+	computer.set_current_meeting(null)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_released("ui_focus_next"):
