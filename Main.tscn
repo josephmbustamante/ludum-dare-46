@@ -124,11 +124,13 @@ margin_bottom = 580.0
 alignment = 1
 
 [node name="PointsDisplay" parent="CanvasLayer/GameUI/MarginContainer/Rows/BottomRow" instance=ExtResource( 14 )]
+alignment = 2
 
 [node name="MeetingDisplay" parent="CanvasLayer/GameUI/MarginContainer/Rows/BottomRow" instance=ExtResource( 10 )]
 margin_left = 421.0
 margin_right = 582.0
 margin_bottom = 96.0
+alignment = 2
 
 [node name="RoomDisplay" parent="CanvasLayer/GameUI/MarginContainer/Rows/BottomRow" instance=ExtResource( 13 )]
 anchor_right = 0.0
@@ -136,6 +138,7 @@ anchor_bottom = 0.0
 margin_left = 586.0
 margin_right = 1004.0
 margin_bottom = 96.0
+alignment = 2
 [connection signal="player_can_interact_with_object" from="YSort/Player" to="." method="_on_Player_player_can_interact_with_object"]
 [connection signal="player_cannot_interact_with_object" from="YSort/Player" to="." method="_on_Player_player_cannot_interact_with_object"]
 [connection signal="player_interacted_with_object" from="YSort/Player" to="." method="_on_Player_player_interacted_with_object"]

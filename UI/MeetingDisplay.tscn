@@ -20,9 +20,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MeetingInfoLabel" type="Label" parent="."]
+[node name="ParticipantsDisplay" type="HBoxContainer" parent="."]
 margin_right = 209.0
-margin_bottom = 15.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 120, 60 )
+alignment = 1
+
+[node name="MeetingInfoLabel" type="Label" parent="."]
+margin_top = 65.0
+margin_right = 209.0
+margin_bottom = 80.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -35,9 +42,9 @@ __meta__ = {
 }
 
 [node name="MeetingDurationLabel" type="Label" parent="."]
-margin_top = 20.0
+margin_top = 85.0
 margin_right = 209.0
-margin_bottom = 31.0
+margin_bottom = 96.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.498039, 0.498039, 0.498039, 1 )
 text = "60 minutes remaining..."
@@ -45,10 +52,3 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="ParticipantsDisplay" type="HBoxContainer" parent="."]
-margin_top = 36.0
-margin_right = 209.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 120, 60 )
-alignment = 1
