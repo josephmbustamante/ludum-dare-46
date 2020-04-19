@@ -71,7 +71,7 @@ func _input(event: InputEvent) -> void:
 				pass
 
 		# Ignore shift keystrokes
-		if key_code == "Shift":
+		elif key_code == "Shift":
 			pass
 
 		# If we aren't currently in a valid typing session, don't allow input
