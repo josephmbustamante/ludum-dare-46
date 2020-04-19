@@ -9,6 +9,8 @@ signal time_until_next_meeting_changed(seconds_remaining)
 onready var new_meeting_timer = $NewMeetingTimer
 
 
+var player_points: int = 0
+
 var meeting_scene = preload("res://Meeting.tscn")
 var meeting: Meeting = null
 

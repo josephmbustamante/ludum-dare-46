@@ -50,8 +50,10 @@ func handle_meeting_started(meeting: Meeting):
 	computer.set_current_meeting(meeting)
 	typing_panel.reset_typing_session()
 
+
 func handle_meeting_finished():
 	computer.set_current_meeting(null)
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_released("ui_focus_next"):

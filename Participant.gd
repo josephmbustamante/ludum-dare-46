@@ -26,7 +26,7 @@ func set_engagement_level(new_engagement_level: int):
 func set_status(new_status: String):
 	status = new_status
 	emit_signal("participant_status_changed", new_status)
-		
+
 func clear_question():
 	current_question = null
 	current_question_time = 0
