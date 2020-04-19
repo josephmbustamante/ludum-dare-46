@@ -2,7 +2,7 @@ extends Node2D
 
 
 signal meeting_started(meeting)
-signal meeting_finished
+signal meeting_finished(point_breakdowns, total_points)
 signal time_until_next_meeting_changed(seconds_remaining)
 
 
@@ -36,7 +36,10 @@ func finish_meeting():
 	if meeting != null:
 		meeting.queue_free()
 		meeting = null
-	emit_signal("meeting_finished")
+	emit_signal("meeting_finished", [
+			{ "reason": "Typed characters", "value": 30 },
+			{ "reason": "Finished prompts", "value": 100 }
+		], 130)
 	begin_new_meeting_timer()
 
 

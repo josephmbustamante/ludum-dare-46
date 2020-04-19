@@ -35,6 +35,7 @@ func _on_MeetingTickTimer_timeout() -> void:
 		finish_meeting()
 		emit_signal("meeting_finished")
 
+
 func get_oldest_prompt() -> Prompt:
 	var oldest_with_question = null
 	for participant in participants.get_children():
@@ -51,6 +52,7 @@ func get_oldest_prompt() -> Prompt:
 		prompt.participant_last_name = oldest_with_question.last_name
 		return prompt
 	return null
+
 
 func handle_prompt_completed(prompt: ParticipantPrompt, success: bool) -> void:
 	print("Handling completed prompt")

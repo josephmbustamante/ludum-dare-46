@@ -52,9 +52,9 @@ func handle_meeting_started(meeting: Meeting):
 	typing_panel.reset_typing_session()
 
 
-func handle_meeting_finished():
+func handle_meeting_finished(point_breakdowns: Array, total_points: int):
 	computer.set_current_meeting(null)
-	meeting_recap_display.set_meeting_recap_display([], 300)
+	meeting_recap_display.set_meeting_recap_display(point_breakdowns, total_points)
 
 
 func _unhandled_input(event: InputEvent) -> void:

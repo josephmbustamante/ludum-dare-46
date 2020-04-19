@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/FontSize16.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/PointBreakdownRow.gd" type="Script" id=2]
+
+[node name="PointBreakdownRow" type="HBoxContainer"]
+margin_right = 242.0
+margin_bottom = 15.0
+custom_constants/separation = 20
+alignment = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PointChangeLabel" type="Label" parent="."]
+margin_left = 15.0
+margin_right = 42.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "+27"
+
+[node name="ReasonLabel" type="Label" parent="."]
+margin_left = 62.0
+margin_right = 242.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "Responded to prompts"

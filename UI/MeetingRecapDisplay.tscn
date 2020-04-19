@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://UI/FontSize24.tres" type="DynamicFont" id=1]
-[ext_resource path="res://UI/FontSize16.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI/PointBreakdownRow.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/uipack_fixed/Vector/UIpack_vector.svg" type="Texture" id=3]
 [ext_resource path="res://UI/MeetingRecapDisplay.gd" type="Script" id=4]
 
@@ -105,70 +105,23 @@ __meta__ = {
 [node name="BreakdownRows" type="VBoxContainer" parent="MarginContainer/Rows"]
 margin_top = 46.0
 margin_right = 242.0
-margin_bottom = 80.0
+margin_bottom = 61.0
 
-[node name="PointBreakdownRow" type="HBoxContainer" parent="MarginContainer/Rows/BreakdownRows"]
-margin_right = 242.0
-margin_bottom = 15.0
-custom_constants/separation = 20
-alignment = 2
-
-[node name="PointChangeLabel" type="Label" parent="MarginContainer/Rows/BreakdownRows/PointBreakdownRow"]
-margin_left = 15.0
-margin_right = 42.0
-margin_bottom = 15.0
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
-text = "+27"
-
-[node name="ReasonLabel" type="Label" parent="MarginContainer/Rows/BreakdownRows/PointBreakdownRow"]
-margin_left = 62.0
-margin_right = 242.0
-margin_bottom = 15.0
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
-text = "Responded to prompts"
-
-[node name="PointBreakdownRow2" type="HBoxContainer" parent="MarginContainer/Rows/BreakdownRows"]
-margin_top = 19.0
-margin_right = 242.0
-margin_bottom = 34.0
-custom_constants/separation = 20
-alignment = 2
-
-[node name="PointChangeLabel" type="Label" parent="MarginContainer/Rows/BreakdownRows/PointBreakdownRow2"]
-margin_left = 15.0
-margin_right = 42.0
-margin_bottom = 15.0
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
-text = "+27"
-
-[node name="ReasonLabel" type="Label" parent="MarginContainer/Rows/BreakdownRows/PointBreakdownRow2"]
-margin_left = 62.0
-margin_right = 242.0
-margin_bottom = 15.0
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
-text = "Responded to prompts"
+[node name="PointBreakdownRow" parent="MarginContainer/Rows/BreakdownRows" instance=ExtResource( 2 )]
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/Rows"]
-margin_top = 90.0
+margin_top = 71.0
 margin_right = 242.0
-margin_bottom = 94.0
+margin_bottom = 75.0
 custom_styles/separator = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TotalPointsRow" type="HBoxContainer" parent="MarginContainer/Rows"]
-margin_top = 104.0
+margin_top = 85.0
 margin_right = 242.0
-margin_bottom = 126.0
+margin_bottom = 107.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
