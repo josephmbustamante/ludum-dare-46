@@ -28,5 +28,8 @@ shape = SubResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectInteractionRadius"]
 modulate = Color( 1, 1, 1, 0.270588 )
 shape = SubResource( 3 )
+
+[node name="StressTickTimer" type="Timer" parent="."]
 [connection signal="body_entered" from="ObjectInteractionRadius" to="." method="_on_ObjectInteractionRadius_body_entered"]
 [connection signal="body_exited" from="ObjectInteractionRadius" to="." method="_on_ObjectInteractionRadius_body_exited"]
+[connection signal="timeout" from="StressTickTimer" to="." method="_on_StressTickTimer_timeout"]

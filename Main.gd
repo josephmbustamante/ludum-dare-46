@@ -2,6 +2,7 @@ extends Node2D
 
 
 onready var camera = $Camera2D
+onready var player = $YSort/Player
 
 onready var meeting_manager = $MeetingManager
 onready var room_manager = $RoomManager
@@ -119,3 +120,7 @@ func _on_Player_player_interacted_with_object() -> void:
 	if currently_selected_object_index != -1:
 		var object_to_interact = interactable_objects[currently_selected_object_index]
 		object_to_interact.interact()
+
+
+func _on_Player_player_stress_level_changed(new_stress_level) -> void:
+	room_display.handle_stress_level_changed(new_stress_level)
