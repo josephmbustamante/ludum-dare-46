@@ -9,6 +9,7 @@ onready var room_manager = $RoomManager
 
 onready var computer = $YSort/Objects/Computer
 onready var router = $YSort/Objects/Router
+onready var bed = $YSort/Objects/Bed
 
 onready var points_display = $CanvasLayer/GameUI/MarginContainer/Rows/BottomRow/PointsDisplay
 onready var meeting_display = $CanvasLayer/GameUI/MarginContainer/Rows/BottomRow/MeetingDisplay
@@ -37,9 +38,11 @@ func _ready() -> void:
 
 	room_manager.set_router(router)
 	router.connect("wifi_level_changed", room_display, "handle_wifi_level_changed")
+	bed.set_player(player)
 
 	computer.connect("request_input", self, "handle_input_request", [computer])
 	router.connect("request_input", self, "handle_input_request", [router])
+	bed.connect("request_input", self, "handle_input_request", [bed])
 	typing_panel.connect("input_finished", self, "handle_input_complete")
 	typing_panel.connect("input_incorrect", camera, "add_trauma")
 

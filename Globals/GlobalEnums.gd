@@ -3,5 +3,6 @@ extends Node
 
 enum ObjectTypes {
 	COMPUTER,
-	ROUTER
+	ROUTER,
+	BED
 }

@@ -18,7 +18,7 @@ var movement_direction: Vector2 = Vector2.ZERO
 
 
 func _ready() -> void:
-	stress_tick_timer.start()
+	start_stress_timer()
 
 
 func _physics_process(delta: float) -> void:
@@ -62,6 +62,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		movement_direction.x -= -1
 	if event.is_action_released("right"):
 		movement_direction.x -= 1
+
+
+func start_stress_timer():
+	stress_tick_timer.start()
+
+
+func stop_stress_timer():
+	stress_tick_timer.stop()
 
 
 func set_stress_level(new_stress_level: int):
