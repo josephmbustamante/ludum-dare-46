@@ -10,6 +10,7 @@ export (int) var speed = 100
 
 
 onready var stress_tick_timer = $StressTickTimer
+onready var animation_player = $AnimationPlayer
 
 
 var stress_level: int = 0 setget set_stress_level
@@ -22,6 +23,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if movement_direction != Vector2.ZERO:
+		animation_player.play("walk")
 		# if stress level is 0 (or, no stress), just use actual speed
 		var actual_speed: float = speed
 
@@ -35,6 +37,8 @@ func _physics_process(delta: float) -> void:
 			actual_speed = 100.0 - modifier
 
 		move_and_slide(movement_direction.normalized() * actual_speed)
+	else:
+		animation_player.stop(true)
 
 
 func _unhandled_input(event: InputEvent) -> void:
