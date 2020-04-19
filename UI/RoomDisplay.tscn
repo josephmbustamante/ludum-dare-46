@@ -4,7 +4,7 @@
 [ext_resource path="res://UI/ColorProgressBar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/RoomDisplay.gd" type="Script" id=3]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0313726, 0.501961, 0.0588235, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -12,7 +12,7 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.235294, 0.235294, 0.235294, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -20,7 +20,7 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.329412, 0.431373, 0.901961, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -28,7 +28,7 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.235294, 0.235294, 0.235294, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -69,12 +69,8 @@ margin_right = 1024.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 150, 0 )
 size_flags_horizontal = 1
-custom_styles/fg = SubResource( 3 )
-custom_styles/bg = SubResource( 4 )
-high_color = Color( 0.0313726, 0.501961, 0.0588235, 1 )
-medium_color = Color( 0.690196, 0.780392, 0.0588235, 1 )
-low_color = Color( 0.886275, 0.658824, 0.0470588, 1 )
-very_low_color = Color( 0.827451, 0.0784314, 0.0784314, 1 )
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
 
 [node name="StressDisplay" type="HBoxContainer" parent="."]
 margin_top = 35.0
@@ -100,8 +96,8 @@ margin_right = 1024.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 150, 0 )
 size_flags_horizontal = 1
-custom_styles/fg = SubResource( 1 )
-custom_styles/bg = SubResource( 2 )
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
 high_color = Color( 0.329412, 0.431373, 0.901961, 1 )
 medium_color = Color( 0.443137, 0.14902, 0.870588, 1 )
 low_color = Color( 0.588235, 0.160784, 0.72549, 1 )

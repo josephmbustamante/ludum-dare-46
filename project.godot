@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "ParticipantInfo",
 "language": "GDScript",
 "path": "res://UI/ParticipantInfo.gd"
+}, {
+"base": "Node2D",
+"class": "Prompt",
+"language": "GDScript",
+"path": "res://Prompt.gd"
 } ]
 _global_script_class_icons={
 "Meeting": "",
 "Participant": "",
-"ParticipantInfo": ""
+"ParticipantInfo": "",
+"Prompt": ""
 }
 
 [application]

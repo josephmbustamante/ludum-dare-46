@@ -4,14 +4,19 @@ extends Node2D
 onready var meeting_manager = $MeetingManager
 onready var room_manager = $RoomManager
 
-onready var selected_object_notifier = $SelectedObjectNotifier
+onready var computer = $YSort/Objects/Computer
+onready var router = $YSort/Objects/Router
+
 onready var meeting_display = $CanvasLayer/GameUI/MarginContainer/Rows/BottomRow/MeetingDisplay
 onready var room_display = $CanvasLayer/GameUI/MarginContainer/Rows/BottomRow/RoomDisplay
+
+onready var selected_object_notifier = $SelectedObjectNotifier
 onready var typing_panel = $TypingPanel
 
 
 var interactable_objects: Array = []
 var currently_selected_object_index: int = -1
+var current_input_requestor = null;
 
 
 # Called when the node enters the scene tree for the first time.
@@ -24,11 +29,25 @@ func _ready() -> void:
 
 	room_manager.connect("wifi_level_changed", room_display, "handle_wifi_level_changed")
 
+	computer.connect("request_input", self, "handle_input_request", [computer])
+	typing_panel.connect("input_finished", self, "handle_input_complete")
+
+
+func handle_input_request(prompt, requestor) -> void:
+	current_input_requestor = requestor
+	typing_panel.start_typing_session(prompt)
+
+
+func handle_input_complete() -> void:
+	print("Handling input complete")
+	current_input_requestor.handle_input_complete(true)
+	current_input_requestor = null
+
 
 func handle_meeting_started(meeting: Meeting):
 	meeting_display.set_meeting_display(meeting)
-	typing_panel.start_typing_session()
-
+	computer.set_current_meeting(meeting)
+	typing_panel.reset_typing_session()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -79,19 +98,4 @@ func hide_selected_object_notifier():
 func _on_Player_player_interacted_with_object() -> void:
 	if currently_selected_object_index != -1:
 		var object_to_interact = interactable_objects[currently_selected_object_index]
-		var object_type: int = object_to_interact.interact()
-		handle_object_interaction(object_type)
-
-
-func handle_object_interaction(object_type: int):
-	match object_type:
-		GlobalEnums.ObjectTypes.COMPUTER:
-			print("computer")
-			typing_panel.show_typing_session()
-			return
-		GlobalEnums.ObjectTypes.ROUTER:
-			print("router")
-			return
-		_:
-			print("Tried to interact with something we don't have handling for!")
-			return
+		object_to_interact.interact()
