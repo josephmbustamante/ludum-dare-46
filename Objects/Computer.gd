@@ -22,14 +22,9 @@ func interact():
 func set_current_meeting(meeting: Meeting):
 	print("Set current meeting %s" % meeting)
 	current_meeting = meeting
-	meeting.connect("meeting_finished", self, "handle_meeting_finished")
+	current_prompt = null
 
 
 func handle_input_complete(status) -> void:
 	if current_meeting != null:
 		current_meeting.handle_prompt_completed(current_prompt, status)
-
-
-func handle_meeting_finished():
-	current_meeting = null
-	current_prompt = null
