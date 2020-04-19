@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/roguelike-characters-pack/Spritesheet/roguelikeChar_transparent.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
@@ -6,6 +6,30 @@
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 205, 91, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 52, 8, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 328, 2, 8, 3 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 191, 96, 10, 1 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 71, 32, 5, 1 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 78, 32, 4, 1 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 8, 2 )
@@ -16,14 +40,40 @@ radius = 16.1245
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="BaseSprite" type="Sprite" parent="."]
 texture = SubResource( 1 )
 
+[node name="Shirt" type="Sprite" parent="."]
+position = Vector2( 0, 3 )
+texture = SubResource( 5 )
+
+[node name="Pants" type="Sprite" parent="."]
+position = Vector2( 0, 4 )
+texture = SubResource( 4 )
+
+[node name="Hair" type="Sprite" parent="."]
+position = Vector2( 0, -5 )
+texture = SubResource( 6 )
+
+[node name="Belt" type="Sprite" parent="."]
+position = Vector2( 0, 5 )
+texture = SubResource( 7 )
+
+[node name="LeftShoe" type="Sprite" parent="."]
+position = Vector2( -3, 9 )
+texture = SubResource( 8 )
+
+[node name="RightShoe" type="Sprite" parent="."]
+position = Vector2( 3, 9 )
+texture = SubResource( 9 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0, 6 )
 shape = SubResource( 2 )
 
 [node name="ObjectInteractionRadius" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectInteractionRadius"]
 modulate = Color( 1, 1, 1, 0.270588 )
