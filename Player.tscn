@@ -149,7 +149,8 @@ position = Vector2( 3, 9 )
 texture = SubResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 7 )
+visible = false
+position = Vector2( 0, 6 )
 shape = SubResource( 10 )
 
 [node name="ObjectInteractionRadius" type="Area2D" parent="."]
@@ -159,6 +160,7 @@ modulate = Color( 1, 1, 1, 0.270588 )
 shape = SubResource( 11 )
 
 [node name="StressTickTimer" type="Timer" parent="."]
+wait_time = 4.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/walk = SubResource( 12 )

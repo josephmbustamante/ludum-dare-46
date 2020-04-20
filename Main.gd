@@ -63,9 +63,12 @@ func handle_input_complete() -> void:
 	current_input_requestor = null
 
 
-func handle_meeting_started(meeting: Meeting):
+func handle_meeting_started(meeting: Meeting, number: int):
 	meeting_display.set_meeting_display(meeting)
 	computer.set_current_meeting(meeting)
+	router.set_difficulty_multiplier(number)
+	player.set_difficulty_multiplier(number)
+	meeting.set_difficulty_multiplier(number)
 
 
 func handle_meeting_finished(point_breakdowns: Array, total_points: int):

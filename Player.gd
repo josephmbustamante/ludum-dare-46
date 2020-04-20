@@ -16,6 +16,9 @@ onready var animation_player = $AnimationPlayer
 var stress_level: int = 0 setget set_stress_level
 var movement_direction: Vector2 = Vector2.ZERO
 
+export (int) var difficulty_multiplier = 0 setget set_difficulty_multiplier
+func set_difficulty_multiplier(multiplier):
+	difficulty_multiplier = multiplier
 
 func _ready() -> void:
 	start_stress_timer()
@@ -46,22 +49,22 @@ func _unhandled_input(event: InputEvent) -> void:
 		emit_signal("player_interacted_with_object")
 
 	if event.is_action_pressed("down"):
-		movement_direction.y += 1
+		movement_direction.y = 1
 	if event.is_action_pressed("up"):
-		movement_direction.y += -1
+		movement_direction.y = -1
 	if event.is_action_pressed("left"):
-		movement_direction.x += -1
+		movement_direction.x = -1
 	if event.is_action_pressed("right"):
-		movement_direction.x += 1
+		movement_direction.x = 1
 
 	if event.is_action_released("down"):
-		movement_direction.y -= 1
+		movement_direction.y = 0
 	if event.is_action_released("up"):
-		movement_direction.y -= -1
+		movement_direction.y = 0
 	if event.is_action_released("left"):
-		movement_direction.x -= -1
+		movement_direction.x = 0
 	if event.is_action_released("right"):
-		movement_direction.x -= 1
+		movement_direction.x = 0
 
 
 func start_stress_timer():
@@ -89,4 +92,4 @@ func _on_ObjectInteractionRadius_body_exited(body: Node) -> void:
 
 
 func _on_StressTickTimer_timeout() -> void:
-	set_stress_level(stress_level + 4)
+	set_stress_level(stress_level + 1 * difficulty_multiplier)

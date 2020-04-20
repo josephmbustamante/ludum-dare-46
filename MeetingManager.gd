@@ -1,7 +1,7 @@
 extends Node2D
 
 
-signal meeting_started(meeting)
+signal meeting_started(meeting, meeting_number)
 signal meeting_finished(point_breakdowns, total_points)
 signal time_until_next_meeting_changed(seconds_remaining)
 
@@ -16,6 +16,7 @@ var player_points: int = 0
 
 var meeting_scene = preload("res://Meeting.tscn")
 var meeting: Meeting = null
+var meeting_count = 0;
 
 var time_until_next_meeting: int = -1 #seconds
 
@@ -26,10 +27,11 @@ func begin_new_meeting_timer():
 
 
 func start_meeting() -> Meeting:
+	meeting_count += 1;
 	meeting = meeting_scene.instance()
 	add_child(meeting)
 	meeting.start_meeting()
-	emit_signal("meeting_started", meeting)
+	emit_signal("meeting_started", meeting, meeting_count)
 	meeting.connect("meeting_finished", self, "finish_meeting")
 	return meeting
 
