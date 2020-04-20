@@ -105,6 +105,7 @@ func handle_game_over():
 
 	game_over_panel.update_game_over_screen(points)
 	game_over_panel.show()
+	get_tree().paused = true
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -163,4 +164,5 @@ func _on_Player_player_stress_level_changed(new_stress_level) -> void:
 
 
 func _on_PlayAgainButton_pressed() -> void:
+	get_tree().paused = false
 	get_tree().change_scene("res://TitleScreen.tscn")
