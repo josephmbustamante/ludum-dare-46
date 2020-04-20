@@ -141,5 +141,5 @@ func handle_prompt_completed(prompt: ParticipantPrompt, success: bool) -> void:
 	for participant in participants.get_children():
 		if participant.last_name == prompt.participant_last_name:
 			point_breakdowns.append({ "reason": "Question answered for %s" % participant.first_name, "value": prompt_completed_points})
-			participant.engagement_level += 10
+			participant.engagement_level += 20
 			participant.clear_question()

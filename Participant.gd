@@ -35,7 +35,7 @@ func set_engagement_level(new_engagement_level: int):
 		clear_question()
 		emit_signal("participant_left_meeting")
 
-	elif randi() % 101 + 1 > engagement_level and randi() % 10 + difficulty_multiplier >= 10:
+	elif randi() % 101 + 21 > engagement_level and randi() % 8 + difficulty_multiplier >= 8:
 		current_question = get_participant_question()
 		current_question_time = OS.get_ticks_msec()
 		emit_signal("participant_needs_interaction", current_question.prompt, current_question.response)

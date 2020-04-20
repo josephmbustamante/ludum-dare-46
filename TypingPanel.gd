@@ -72,10 +72,6 @@ func _input(event: InputEvent) -> void:
 			else:
 				pass
 
-		# Ignore shift keystrokes
-		elif key_code == "Shift":
-			pass
-
 		# If we aren't currently in a valid typing session, don't allow input
 		elif current_character_index == -1:
 			pass
@@ -101,9 +97,12 @@ func _input(event: InputEvent) -> void:
 					input_text.parse_bbcode("[u][color=black]" + text_to_type.substr(0, current_character_index) + "[/color][/u]" + text_to_type.substr(current_character_index, -1))
 
 			else:
-				print("INCORRECTLY TYPED %s instead of %s" % [key_press_string, next_character])
-				input_text.parse_bbcode("[u][color=black]" + text_to_type.substr(0, current_character_index) + "[/color][color=red]" + text_to_type.substr(current_character_index, 1) + "[/color][/u]" + text_to_type.substr(current_character_index + 1, -1))
-				emit_signal("input_incorrect")
+				if key_code == "Shift":
+					pass
+				else:
+					print("INCORRECTLY TYPED %s instead of %s" % [key_press_string, next_character])
+					input_text.parse_bbcode("[u][color=black]" + text_to_type.substr(0, current_character_index) + "[/color][color=red]" + text_to_type.substr(current_character_index, 1) + "[/color][/u]" + text_to_type.substr(current_character_index + 1, -1))
+					emit_signal("input_incorrect")
 
 	get_tree().set_input_as_handled()
 

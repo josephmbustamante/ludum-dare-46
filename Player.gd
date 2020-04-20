@@ -32,11 +32,11 @@ func _physics_process(delta: float) -> void:
 
 		# if our stress level is 100, move at 20% speed
 		if stress_level == 100:
-			actual_speed = 20
+			actual_speed = 30
 
 		# if our stress level is between 0 and 100, move at a variable rate between 20% and 100%
 		elif stress_level > 0:
-			var modifier: float = 80 * ((stress_level as float) / 100)
+			var modifier: float = 70 * ((stress_level as float) / 100)
 			actual_speed = speed - modifier
 
 		move_and_slide(movement_direction.normalized() * actual_speed)
