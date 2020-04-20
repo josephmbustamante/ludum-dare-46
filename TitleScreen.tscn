@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://UI/FontSize12.tres" type="DynamicFont" id=1]
 [ext_resource path="res://UI/FontSize24.tres" type="DynamicFont" id=2]
@@ -45,6 +45,10 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 modulate_color = Color( 0.509804, 0.521569, 0.580392, 1 )
 
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 940, 444, 32, 40 )
+
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource( 4 )
 
@@ -88,11 +92,24 @@ position = Vector2( 8.99999, -20 )
 scale = Vector2( 2.5, 2.5 )
 
 [node name="InteractTutorial" type="Panel" parent="Tutorials"]
-margin_left = 318.0
-margin_top = 105.2
-margin_right = 392.0
-margin_bottom = 165.2
+margin_left = 324.4
+margin_top = 99.2
+margin_right = 398.4
+margin_bottom = 159.2
 custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pointer2" type="TextureRect" parent="Tutorials/InteractTutorial"]
+modulate = Color( 0.513726, 0.52549, 0.576471, 1 )
+margin_left = 3.20001
+margin_top = 14.8
+margin_right = 35.2
+margin_bottom = 54.8
+rect_rotation = 90.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = SubResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -127,11 +144,24 @@ text = "Press E to interact with objects, and enter or escape to stop. Use WASD 
 autowrap = true
 
 [node name="ComputerTutorial" type="Panel" parent="Tutorials"]
-margin_left = 197.0
-margin_top = 43.0
-margin_right = 278.0
-margin_bottom = 123.0
+margin_left = 201.2
+margin_top = 48.0
+margin_right = 282.2
+margin_bottom = 128.0
 custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pointer" type="TextureRect" parent="Tutorials/ComputerTutorial"]
+modulate = Color( 0.513726, 0.52549, 0.576471, 1 )
+margin_left = 3.20001
+margin_top = 25.6
+margin_right = 35.2
+margin_bottom = 65.6
+rect_rotation = 90.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = SubResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -166,10 +196,10 @@ text = "When a meeting is in session, participants will occasionally have questi
 autowrap = true
 
 [node name="BedTutorial" type="Panel" parent="Tutorials"]
-margin_left = 319.0
-margin_top = 31.0
-margin_right = 400.0
-margin_bottom = 111.0
+margin_left = 324.4
+margin_top = 25.6
+margin_right = 405.4
+margin_bottom = 105.6
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -204,12 +234,38 @@ custom_constants/shadow_as_outline = 1
 text = "Your stress level will go up over time, causing you to move slower. Sleep in your bed to lower it. You must finish typing the prompt to stop sleeping."
 autowrap = true
 
+[node name="Pointer2" type="TextureRect" parent="Tutorials/BedTutorial"]
+modulate = Color( 0.513726, 0.52549, 0.576471, 1 )
+margin_left = 3.80002
+margin_top = 52.2
+margin_right = 35.8
+margin_bottom = 92.2
+rect_rotation = 90.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="RouterTutorial" type="Panel" parent="Tutorials"]
 margin_left = 17.6
 margin_top = 34.8
 margin_right = 95.6
 margin_bottom = 113.8
 custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pointer3" type="TextureRect" parent="Tutorials/RouterTutorial"]
+modulate = Color( 0.513726, 0.52549, 0.576471, 1 )
+margin_left = 70.0
+margin_top = 53.2
+margin_right = 102.0
+margin_bottom = 93.2
+rect_rotation = -90.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = SubResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -244,10 +300,10 @@ text = "Your WiFi strength will go down over time. If it hits 0, you won't be ab
 autowrap = true
 
 [node name="EngagementTutorial" type="Panel" parent="Tutorials"]
-margin_left = 282.0
-margin_top = 160.0
-margin_right = 404.0
-margin_bottom = 219.0
+margin_left = 281.2
+margin_top = 166.4
+margin_right = 403.2
+margin_bottom = 225.4
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -282,11 +338,24 @@ custom_constants/shadow_as_outline = 1
 text = "Meetings will automatically start every 10 seconds, and last for 30 seconds. Each participant has an engagement level - if that hits 0, they'll leave the meeting."
 autowrap = true
 
+[node name="Pointer2" type="TextureRect" parent="Tutorials/EngagementTutorial"]
+modulate = Color( 0.513726, 0.52549, 0.576471, 1 )
+margin_left = 4.80002
+margin_top = 44.8
+margin_right = 36.8
+margin_bottom = 84.8
+rect_rotation = 90.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="PointsTutorial" type="Panel" parent="Tutorials"]
-margin_left = 0.400003
-margin_top = 176.4
-margin_right = 125.4
-margin_bottom = 232.4
+margin_left = 2.8
+margin_top = 172.8
+margin_right = 127.8
+margin_bottom = 228.8
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -320,6 +389,18 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
 text = "You get points for how engaged you keep people during a meeting. If a participant leaves the meeting, you lose points. If all participants leave, you lose the game."
 autowrap = true
+
+[node name="Pointer2" type="TextureRect" parent="Tutorials/PointsTutorial"]
+modulate = Color( 0.513726, 0.52549, 0.576471, 1 )
+margin_left = 56.0
+margin_top = 46.4
+margin_right = 88.0
+margin_bottom = 86.4
+rect_scale = Vector2( 0.3, 0.3 )
+texture = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="StartGameTutorial" type="Panel" parent="Tutorials"]
 margin_left = 74.4
@@ -359,6 +440,19 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
 text = "Try to see how many points you can get keeping your virtual meetings alive. Press the start button to begin playing."
 autowrap = true
+
+[node name="Pointer2" type="TextureRect" parent="Tutorials/StartGameTutorial"]
+modulate = Color( 0.513726, 0.52549, 0.576471, 1 )
+margin_left = 67.6
+margin_top = 48.4
+margin_right = 99.6
+margin_bottom = 88.4
+rect_rotation = -90.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
