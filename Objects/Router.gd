@@ -6,6 +6,13 @@ export (GlobalEnums.ObjectTypes) var object_type = GlobalEnums.ObjectTypes.ROUTE
 export (int, 0, 100) var wifi_level: int = 100 setget set_wifi_level
 
 var current_prompt: Prompt = null
+var possible_names = [
+		"Get off my LAN",
+		"Free Public Wifi",
+		"Bill Wi the Science Fi",
+		"LAN Solo",
+		"My Internet"
+	]
 
 signal request_input(prompt)
 signal wifi_level_changed(level)
@@ -15,10 +22,16 @@ func set_difficulty_multiplier(multiplier):
 	difficulty_multiplier = multiplier
 
 func interact():
+	var command = get_router_name()
 	var prompt = Prompt.new()
-	prompt.prompt = "Enter command: reset_router"
-	prompt.response = "reset_router"
+	prompt.prompt = "Router reset! Please confirm new network name:"
+	prompt.response = command
 	emit_signal("request_input", prompt)
+
+
+func get_router_name() -> String:
+	possible_names.shuffle()
+	return possible_names[0]
 
 
 func handle_input_complete(status) -> void:
