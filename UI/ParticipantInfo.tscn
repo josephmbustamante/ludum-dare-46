@@ -19,27 +19,27 @@ modulate_color = Color( 0.329412, 0.329412, 0.329412, 1 )
 atlas = ExtResource( 1 )
 region = Rect2( 0, 84, 16, 20 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
 region = Rect2( 16, 172, 18, 14 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
 region = Rect2( 16, 84, 18, 20 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 154, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 1 )
 region = Rect2( 16, 138, 18, 14 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
 region = Rect2( 16, 104, 18, 14 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.0313726, 0.501961, 0.0588235, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -47,7 +47,7 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.235294, 0.235294, 0.235294, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -102,7 +102,7 @@ visible = false
 margin_top = 24.0
 margin_right = 18.0
 margin_bottom = 38.0
-texture = SubResource( 5 )
+texture = SubResource( 3 )
 stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
@@ -113,7 +113,7 @@ visible = false
 margin_top = 33.0
 margin_right = 18.0
 margin_bottom = 53.0
-texture = SubResource( 6 )
+texture = SubResource( 4 )
 stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
@@ -124,7 +124,7 @@ visible = false
 margin_top = 45.0
 margin_right = 18.0
 margin_bottom = 61.0
-texture = SubResource( 7 )
+texture = SubResource( 5 )
 stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
@@ -135,7 +135,7 @@ visible = false
 margin_top = 55.0
 margin_right = 18.0
 margin_bottom = 69.0
-texture = SubResource( 8 )
+texture = SubResource( 6 )
 stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
@@ -146,7 +146,7 @@ visible = false
 margin_top = 64.0
 margin_right = 18.0
 margin_bottom = 78.0
-texture = SubResource( 9 )
+texture = SubResource( 7 )
 stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
@@ -177,8 +177,8 @@ margin_right = 74.0
 margin_bottom = 39.0
 rect_min_size = Vector2( 0, 10 )
 size_flags_vertical = 1
-custom_styles/fg = SubResource( 3 )
-custom_styles/bg = SubResource( 4 )
+custom_styles/fg = SubResource( 8 )
+custom_styles/bg = SubResource( 9 )
 
 [node name="ParticipantStatus" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 margin_top = 43.0

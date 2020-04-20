@@ -95,11 +95,14 @@ func handle_meeting_finished(point_breakdowns: Array, total_points: int):
 
 func handle_game_over():
 	print("game over!")
+
 	message_panel.hide()
 	typing_panel.hide()
 	meeting_display.hide()
 	points_display.hide()
 	room_display.hide()
+
+	game_over_panel.update_game_over_screen(points)
 	game_over_panel.show()
 
 
