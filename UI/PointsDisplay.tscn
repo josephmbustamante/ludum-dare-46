@@ -16,6 +16,8 @@ __meta__ = {
 margin_right = 417.0
 margin_bottom = 15.0
 custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
 text = "POINTS"
 align = 1
 
