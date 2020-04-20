@@ -62,7 +62,7 @@ func get_participant_question():
 		{"prompt": "Wait, what meeting is this?", "response": "The best one."},
 		{"prompt": "When are the TPS reports due?", "response": "By Saturday."},
 		{"prompt": "Can we circle back to that last point?", "response": "No, we cannot."},
-		{"prompt": "Is this related to a key performance metric?", "response": "What are those?."},
+		{"prompt": "Is this related to a key performance metric?", "response": "What are those?"},
 		{"prompt": "Will this have an affect on team velocity?", "response": "Most assuredly."},
 		{"prompt": "How can we increase consumer buy-in?", "response": "Nobody cares!"},
 		{"prompt": "Do you mind if I punt this until next week?", "response": "Do your job!"},
