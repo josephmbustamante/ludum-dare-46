@@ -10,7 +10,7 @@ export (String) var meeting_name = "REGIONAL SALES MEETING"
 export (int) var meeting_duration = 30
 
 export (int) var prompt_completed_points = 10
-export (int) var meeting_finished_base_points = 30
+export (int) var meeting_finished_base_points = 50
 export (int) var participant_left_points = -60
 
 
