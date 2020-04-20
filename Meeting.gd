@@ -23,6 +23,43 @@ var current_points: int = 0
 var point_breakdowns: Array = []
 var active_participants: int = 3
 
+var participant_first_names = [
+	"Karen",
+	"Debra",
+	"Bruce",
+	"Peter",
+	"Bill",
+	"Andrew",
+	"Simon",
+	"Leroy",
+	"Amanda",
+	"Cathy",
+	"Mary",
+	"Lewis",
+	"Kevin",
+	"Angela",
+	"Jim",
+	"Joanna",
+]
+
+var participant_last_names = [
+	"McGillis",
+	"Malone",
+	"Scott",
+	"Martin",
+	"Schrute",
+	"Halpert",
+	"Dwyer",
+	"Knope",
+	"Preston",
+	"Lumbergh",
+	"Gibbons",
+	"Bolton",
+	"Banner",
+	"Wayne",
+	"Kitchens",
+]
+
 
 export (int) var difficulty_multiplier = 0 setget set_difficulty_multiplier
 
@@ -34,8 +71,11 @@ func set_difficulty_multiplier(multiplier):
 
 func start_meeting(meeting_name: String):
 	self.meeting_name = meeting_name
+	randomize()
 
 	for participant in participants.get_children():
+		participant.first_name = participant_first_names[randi() % participant_first_names.size()]
+		participant.last_name = participant_last_names[randi() % participant_last_names.size()]
 		participant.connect("participant_left_meeting", self, "handle_participant_left_meeting", [participant])
 
 	meeting_tick_timer.start()
