@@ -18,7 +18,10 @@ func interact():
 	elif current_meeting != null:
 		print("Emitting request input")
 		current_prompt = current_meeting.get_oldest_prompt()
-		emit_signal("request_input", current_prompt)
+		if current_prompt == null:
+			emit_signal("show_message", "Nobody has a question yet!")
+		else:
+			emit_signal("request_input", current_prompt)
 	else:
 		print("NO MEETING")
 		emit_signal("show_message", "No meeting in progress")
