@@ -21,7 +21,12 @@ onready var participants = $Participants
 var current_points: int = 0
 var point_breakdowns: Array = []
 
-
+export (int) var difficulty_multiplier = 0 setget set_difficulty_multiplier
+func set_difficulty_multiplier(multiplier):
+	difficulty_multiplier = multiplier
+	for participant in participants.get_children():
+		participant.set_difficulty_multiplier(multiplier)
+	
 func start_meeting():
 	meeting_tick_timer.start()
 

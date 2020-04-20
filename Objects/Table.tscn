@@ -10,7 +10,7 @@ atlas = ExtResource( 1 )
 region = Rect2( 68, 51, 16, 16 )
 
 [node name="Table" type="StaticBody2D"]
-position = Vector2( 200, 104 )
+position = Vector2( 0, 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

@@ -2,14 +2,14 @@ extends Node2D
 
 
 onready var camera = $Camera2D
-onready var player = $YSort/Player
+onready var player = $GroundYSort/Player
 
 onready var meeting_manager = $MeetingManager
 onready var room_manager = $RoomManager
 
-onready var computer = $YSort/Objects/Computer
-onready var router = $YSort/Objects/Router
-onready var bed = $YSort/Objects/Bed
+onready var computer = $OnTableYSort/Computer
+onready var router = $OnTableYSort/Router
+onready var bed = $GroundYSort/Bed
 
 onready var points_display = $CanvasLayer/GameUI/MarginContainer/Rows/BottomRow/PointsDisplay
 onready var meeting_display = $CanvasLayer/GameUI/MarginContainer/Rows/BottomRow/MeetingDisplay
@@ -63,9 +63,12 @@ func handle_input_complete() -> void:
 	current_input_requestor = null
 
 
-func handle_meeting_started(meeting: Meeting):
+func handle_meeting_started(meeting: Meeting, number: int):
 	meeting_display.set_meeting_display(meeting)
 	computer.set_current_meeting(meeting)
+	router.set_difficulty_multiplier(number)
+	player.set_difficulty_multiplier(number)
+	meeting.set_difficulty_multiplier(number)
 
 
 func handle_meeting_finished(point_breakdowns: Array, total_points: int):

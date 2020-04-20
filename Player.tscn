@@ -7,19 +7,19 @@
 atlas = ExtResource( 1 )
 region = Rect2( 4, 0, 8, 16 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 7, 3, 8 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
 region = Rect2( 13, 7, 3, 8 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
 region = Rect2( 205, 91, 16, 8 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
 region = Rect2( 52, 8, 16, 8 )
 
@@ -39,14 +39,13 @@ region = Rect2( 71, 32, 5, 1 )
 atlas = ExtResource( 1 )
 region = Rect2( 78, 32, 4, 1 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 8, 2 )
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=11]
 radius = 16.1245
 
-[sub_resource type="Animation" id=10]
-resource_name = "walk"
+[sub_resource type="Animation" id=12]
 length = 0.3
 loop = true
 tracks/0/type = "value"
@@ -118,20 +117,20 @@ texture = SubResource( 1 )
 
 [node name="BaseLeftArm" type="Sprite" parent="."]
 position = Vector2( -6, 3 )
-texture = SubResource( 11 )
+texture = SubResource( 2 )
 
 [node name="BaseRightArm" type="Sprite" parent="."]
 position = Vector2( 7, 3 )
-texture = SubResource( 12 )
+texture = SubResource( 3 )
 
 [node name="Shirt" type="Sprite" parent="."]
 modulate = Color( 0.784314, 0.858824, 0.964706, 1 )
 position = Vector2( 0, 3 )
-texture = SubResource( 5 )
+texture = SubResource( 4 )
 
 [node name="Pants" type="Sprite" parent="."]
 position = Vector2( 0, 4 )
-texture = SubResource( 4 )
+texture = SubResource( 5 )
 
 [node name="Hair" type="Sprite" parent="."]
 position = Vector2( 0, -5 )
@@ -152,19 +151,19 @@ texture = SubResource( 9 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( 0, 6 )
-shape = SubResource( 2 )
+shape = SubResource( 10 )
 
 [node name="ObjectInteractionRadius" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectInteractionRadius"]
 modulate = Color( 1, 1, 1, 0.270588 )
-shape = SubResource( 3 )
+shape = SubResource( 11 )
 
 [node name="StressTickTimer" type="Timer" parent="."]
+wait_time = 4.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/walk = SubResource( 10 )
+anims/walk = SubResource( 12 )
 [connection signal="body_entered" from="ObjectInteractionRadius" to="." method="_on_ObjectInteractionRadius_body_entered"]
 [connection signal="body_exited" from="ObjectInteractionRadius" to="." method="_on_ObjectInteractionRadius_body_exited"]
 [connection signal="timeout" from="StressTickTimer" to="." method="_on_StressTickTimer_timeout"]
