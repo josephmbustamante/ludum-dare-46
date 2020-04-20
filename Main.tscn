@@ -20,114 +20,114 @@
 [ext_resource path="res://Objects/Bed.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Assets/roguelike-modern-city-pack/Spritesheet/roguelikeCity_magenta.png" type="Texture" id=19]
 
-[sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 8, 6 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 17 )
-region = Rect2( 278, 154, 10, 14 )
-
-[sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 17 )
-region = Rect2( 288, 154, 18, 14 )
-
-[sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 17 )
-region = Rect2( 306, 154, 10, 14 )
-
-[sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 17 )
-region = Rect2( 278, 188, 10, 14 )
-
-[sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 17 )
-region = Rect2( 288, 188, 16, 14 )
-
-[sub_resource type="AtlasTexture" id=29]
-atlas = ExtResource( 17 )
-region = Rect2( 306, 188, 10, 14 )
-
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6, 14 )
+extents = Vector2( 8, 6 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 17 )
-region = Rect2( 424, 153, 16, 18 )
+region = Rect2( 278, 154, 10, 14 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 17 )
-region = Rect2( 424, 136, 16, 16 )
+region = Rect2( 288, 154, 18, 14 )
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 9, 7 )
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 17 )
+region = Rect2( 306, 154, 10, 14 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 17 )
-region = Rect2( 0, 204, 16, 16 )
+region = Rect2( 278, 188, 10, 14 )
 
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 8, 7 )
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 17 )
+region = Rect2( 288, 188, 16, 14 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 17 )
+region = Rect2( 306, 188, 10, 14 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 6, 14 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 17 )
+region = Rect2( 424, 153, 16, 18 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 17 )
-region = Rect2( 68, 204, 16, 16 )
+region = Rect2( 424, 136, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 17 )
-region = Rect2( 136, 238, 16, 16 )
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 9, 7 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 17 )
-region = Rect2( 186, 204, 18, 16 )
+region = Rect2( 0, 204, 16, 16 )
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 6, 8 )
+extents = Vector2( 8, 7 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 17 )
-region = Rect2( 192, 220, 12, 18 )
+region = Rect2( 68, 204, 16, 16 )
 
-[sub_resource type="RectangleShape2D" id=17]
-extents = Vector2( 9, 7 )
-
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 17 )
-region = Rect2( 220, 204, 18, 16 )
-
-[sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 8, 7 )
-
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 17 )
-region = Rect2( 136, 254, 16, 18 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 17 )
-region = Rect2( 170, 254, 15, 18 )
+region = Rect2( 136, 238, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 17 )
-region = Rect2( 54, 70, 10, 14 )
+region = Rect2( 186, 204, 18, 16 )
 
-[sub_resource type="RectangleShape2D" id=26]
-extents = Vector2( 8, 6 )
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 6, 8 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 17 )
+region = Rect2( 192, 220, 12, 18 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 9, 7 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 17 )
+region = Rect2( 220, 204, 18, 16 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 8, 7 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 17 )
+region = Rect2( 136, 254, 16, 18 )
 
 [sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 17 )
+region = Rect2( 170, 254, 15, 18 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 17 )
+region = Rect2( 54, 70, 10, 14 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 8, 6 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 17 )
 region = Rect2( 238, 238, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 17 )
 region = Rect2( 102, 254, 16, 14 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 6, 4 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 19 )
 region = Rect2( 528, 204, 14, 16 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 19 )
 region = Rect2( 530, 172, 10, 14 )
 
@@ -172,70 +172,70 @@ position = Vector2( 203, 86 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OrangeRug"]
 position = Vector2( 13, 0 )
-shape = SubResource( 15 )
+shape = SubResource( 1 )
 disabled = true
 
 [node name="Sprite2" type="Sprite" parent="OrangeRug"]
 position = Vector2( 0, 6 )
-texture = SubResource( 22 )
+texture = SubResource( 2 )
 
 [node name="Sprite3" type="Sprite" parent="OrangeRug"]
 position = Vector2( 12, 6 )
-texture = SubResource( 24 )
+texture = SubResource( 3 )
 
 [node name="Sprite4" type="Sprite" parent="OrangeRug"]
 position = Vector2( 25, 6 )
-texture = SubResource( 25 )
+texture = SubResource( 4 )
 
 [node name="Sprite7" type="Sprite" parent="OrangeRug"]
 position = Vector2( 0, -8 )
 scale = Vector2( 1, -1 )
-texture = SubResource( 22 )
+texture = SubResource( 2 )
 
 [node name="Sprite6" type="Sprite" parent="OrangeRug"]
 position = Vector2( 12, -8 )
 scale = Vector2( 1, -1 )
-texture = SubResource( 24 )
+texture = SubResource( 3 )
 
 [node name="Sprite5" type="Sprite" parent="OrangeRug"]
 position = Vector2( 25, -8 )
 scale = Vector2( 1, -1 )
-texture = SubResource( 25 )
+texture = SubResource( 4 )
 
 [node name="GreenRug" type="StaticBody2D" parent="."]
 position = Vector2( 189, 173 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GreenRug"]
 position = Vector2( 13, 0 )
-shape = SubResource( 15 )
+shape = SubResource( 1 )
 disabled = true
 
 [node name="Sprite2" type="Sprite" parent="GreenRug"]
 position = Vector2( 0, 6 )
-texture = SubResource( 27 )
+texture = SubResource( 5 )
 
 [node name="Sprite3" type="Sprite" parent="GreenRug"]
 position = Vector2( 12, 6 )
-texture = SubResource( 28 )
+texture = SubResource( 6 )
 
 [node name="Sprite4" type="Sprite" parent="GreenRug"]
 position = Vector2( 25, 6 )
-texture = SubResource( 29 )
+texture = SubResource( 7 )
 
 [node name="Sprite7" type="Sprite" parent="GreenRug"]
 position = Vector2( 0, -8 )
 scale = Vector2( 1, -1 )
-texture = SubResource( 27 )
+texture = SubResource( 5 )
 
 [node name="Sprite6" type="Sprite" parent="GreenRug"]
 position = Vector2( 12, -8 )
 scale = Vector2( 1, -1 )
-texture = SubResource( 28 )
+texture = SubResource( 6 )
 
 [node name="Sprite5" type="Sprite" parent="GreenRug"]
 position = Vector2( 25, -8 )
 scale = Vector2( 1, -1 )
-texture = SubResource( 29 )
+texture = SubResource( 7 )
 
 [node name="GroundYSort" type="YSort" parent="."]
 
@@ -252,199 +252,199 @@ position = Vector2( 109, 77.8099 )
 position = Vector2( 87, 174 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundYSort/Piano"]
-shape = SubResource( 1 )
+shape = SubResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="GroundYSort/Piano"]
 position = Vector2( 0, 6 )
-texture = SubResource( 2 )
+texture = SubResource( 9 )
 
 [node name="Sprite2" type="Sprite" parent="GroundYSort/Piano"]
 position = Vector2( 0, -11 )
-texture = SubResource( 3 )
+texture = SubResource( 10 )
 
 [node name="CounterLeftEnd" type="StaticBody2D" parent="GroundYSort"]
 position = Vector2( 272, 146 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundYSort/CounterLeftEnd"]
 position = Vector2( 0, 8 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="Sprite2" type="Sprite" parent="GroundYSort/CounterLeftEnd"]
 position = Vector2( 0, 6 )
-texture = SubResource( 5 )
+texture = SubResource( 12 )
 
 [node name="CounterTowel" type="StaticBody2D" parent="GroundYSort"]
 position = Vector2( 288, 146 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundYSort/CounterTowel"]
 position = Vector2( 0, 8 )
-shape = SubResource( 9 )
+shape = SubResource( 13 )
 
 [node name="Sprite2" type="Sprite" parent="GroundYSort/CounterTowel"]
 position = Vector2( 0, 6 )
-texture = SubResource( 10 )
+texture = SubResource( 14 )
 
 [node name="CounterSink" type="StaticBody2D" parent="GroundYSort"]
 position = Vector2( 304, 146 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundYSort/CounterSink"]
 position = Vector2( 0, 8 )
-shape = SubResource( 9 )
+shape = SubResource( 13 )
 
 [node name="Sprite2" type="Sprite" parent="GroundYSort/CounterSink"]
 position = Vector2( 0, 6 )
-texture = SubResource( 11 )
+texture = SubResource( 15 )
 
 [node name="CounterCorner" type="StaticBody2D" parent="GroundYSort"]
 position = Vector2( 320, 146 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundYSort/CounterCorner"]
 position = Vector2( 0, 8 )
-shape = SubResource( 9 )
+shape = SubResource( 13 )
 
 [node name="Sprite2" type="Sprite" parent="GroundYSort/CounterCorner"]
 position = Vector2( 0, 6 )
-texture = SubResource( 12 )
+texture = SubResource( 16 )
 
 [node name="CounterRight" type="StaticBody2D" parent="GroundYSort"]
 position = Vector2( 323, 161 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundYSort/CounterRight"]
 position = Vector2( 0, 7 )
-shape = SubResource( 13 )
+shape = SubResource( 17 )
 
 [node name="Sprite2" type="Sprite" parent="GroundYSort/CounterRight"]
 position = Vector2( 0, 6 )
-texture = SubResource( 14 )
+texture = SubResource( 18 )
 
 [node name="CounterBottomCorner" type="StaticBody2D" parent="GroundYSort"]
 position = Vector2( 320, 177 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundYSort/CounterBottomCorner"]
 position = Vector2( 0, 7 )
-shape = SubResource( 17 )
+shape = SubResource( 19 )
 
 [node name="Sprite2" type="Sprite" parent="GroundYSort/CounterBottomCorner"]
 position = Vector2( 0, 6 )
-texture = SubResource( 18 )
+texture = SubResource( 20 )
 
 [node name="CounterLastLeft" type="StaticBody2D" parent="GroundYSort"]
 position = Vector2( 289, 177 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundYSort/CounterLastLeft"]
 position = Vector2( 0, 7 )
-shape = SubResource( 19 )
+shape = SubResource( 21 )
 
 [node name="Sprite2" type="Sprite" parent="GroundYSort/CounterLastLeft"]
 position = Vector2( 0, 6 )
-texture = SubResource( 20 )
+texture = SubResource( 22 )
 
 [node name="CounterLastLeft2" type="StaticBody2D" parent="GroundYSort"]
 position = Vector2( 304, 177 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundYSort/CounterLastLeft2"]
 position = Vector2( 0, 7 )
-shape = SubResource( 19 )
+shape = SubResource( 21 )
 
 [node name="Sprite2" type="Sprite" parent="GroundYSort/CounterLastLeft2"]
 position = Vector2( 1, 6 )
-texture = SubResource( 21 )
+texture = SubResource( 23 )
 
 [node name="PianoBench2" type="StaticBody2D" parent="GroundYSort"]
 position = Vector2( 99, 167 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundYSort/PianoBench2"]
 position = Vector2( 0, 9 )
-shape = SubResource( 15 )
+shape = SubResource( 1 )
 
 [node name="Sprite2" type="Sprite" parent="GroundYSort/PianoBench2"]
 position = Vector2( 0, 6 )
-texture = SubResource( 16 )
+texture = SubResource( 24 )
 
 [node name="Oven" type="StaticBody2D" parent="GroundYSort"]
 position = Vector2( 256, 146 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundYSort/Oven"]
 position = Vector2( -1, 9 )
-shape = SubResource( 26 )
+shape = SubResource( 25 )
 
 [node name="Sprite2" type="Sprite" parent="GroundYSort/Oven"]
 position = Vector2( 0, 6 )
-texture = SubResource( 23 )
+texture = SubResource( 26 )
 
 [node name="DrinkCabinet" type="StaticBody2D" parent="GroundYSort"]
 position = Vector2( 90, 64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundYSort/DrinkCabinet"]
 position = Vector2( -1, 9 )
-shape = SubResource( 26 )
+shape = SubResource( 25 )
 
 [node name="Sprite2" type="Sprite" parent="GroundYSort/DrinkCabinet"]
 position = Vector2( -1, 8 )
-texture = SubResource( 30 )
+texture = SubResource( 27 )
 
 [node name="Plant" type="StaticBody2D" parent="GroundYSort"]
 position = Vector2( 166, 69 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundYSort/Plant"]
 position = Vector2( 0, 11 )
-shape = SubResource( 6 )
+shape = SubResource( 28 )
 
 [node name="Sprite2" type="Sprite" parent="GroundYSort/Plant"]
 position = Vector2( 0, 6 )
-texture = SubResource( 7 )
+texture = SubResource( 29 )
 
 [node name="Sprite3" type="Sprite" parent="GroundYSort/Plant"]
 position = Vector2( 0, -9 )
-texture = SubResource( 8 )
+texture = SubResource( 30 )
 
 [node name="Plant2" type="StaticBody2D" parent="GroundYSort"]
 position = Vector2( 242, 70 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundYSort/Plant2"]
 position = Vector2( 0, 11 )
-shape = SubResource( 6 )
+shape = SubResource( 28 )
 
 [node name="Sprite2" type="Sprite" parent="GroundYSort/Plant2"]
 position = Vector2( 0, 6 )
-texture = SubResource( 7 )
+texture = SubResource( 29 )
 
 [node name="Sprite3" type="Sprite" parent="GroundYSort/Plant2"]
 position = Vector2( 0, -9 )
-texture = SubResource( 8 )
+texture = SubResource( 30 )
 
 [node name="Plant3" type="StaticBody2D" parent="GroundYSort"]
 position = Vector2( 89, 149 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundYSort/Plant3"]
 position = Vector2( 0, 11 )
-shape = SubResource( 6 )
+shape = SubResource( 28 )
 
 [node name="Sprite2" type="Sprite" parent="GroundYSort/Plant3"]
 position = Vector2( 0, 6 )
-texture = SubResource( 7 )
+texture = SubResource( 29 )
 
 [node name="Sprite3" type="Sprite" parent="GroundYSort/Plant3"]
 position = Vector2( 0, -9 )
-texture = SubResource( 8 )
+texture = SubResource( 30 )
 
 [node name="Plant4" type="StaticBody2D" parent="GroundYSort"]
 position = Vector2( 272, 178 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundYSort/Plant4"]
 position = Vector2( 0, 11 )
-shape = SubResource( 6 )
+shape = SubResource( 28 )
 
 [node name="Sprite2" type="Sprite" parent="GroundYSort/Plant4"]
 position = Vector2( 0, 6 )
-texture = SubResource( 7 )
+texture = SubResource( 29 )
 
 [node name="Sprite3" type="Sprite" parent="GroundYSort/Plant4"]
 position = Vector2( 0, -9 )
-texture = SubResource( 8 )
+texture = SubResource( 30 )
 
 [node name="Player" parent="GroundYSort" instance=ExtResource( 1 )]
-position = Vector2( 200, 136 )
+position = Vector2( 308, 94 )
 
 [node name="OnTableYSort" type="YSort" parent="."]
 
