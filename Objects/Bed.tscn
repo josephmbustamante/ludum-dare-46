@@ -4,29 +4,29 @@
 [ext_resource path="res://Objects/Bed.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
+extents = Vector2( 10, 6 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
-region = Rect2( 152, 120, 16, 16 )
+region = Rect2( 136, 52, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
-region = Rect2( 186, 50, 16, 8 )
+region = Rect2( 198, 2, 6, 14 )
 
 [node name="Bed" type="StaticBody2D"]
 position = Vector2( 304, 96 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 4 )
+position = Vector2( -2, 2 )
 shape = SubResource( 1 )
 
 [node name="Mattress" type="Sprite" parent="."]
 texture = SubResource( 2 )
 
 [node name="Mattress2" type="Sprite" parent="."]
-position = Vector2( 0, 8 )
+position = Vector2( -10, 0 )
 texture = SubResource( 3 )
 
 [node name="StressRestoreTickTimer" type="Timer" parent="."]

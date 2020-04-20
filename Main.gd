@@ -2,14 +2,14 @@ extends Node2D
 
 
 onready var camera = $Camera2D
-onready var player = $YSort/Player
+onready var player = $GroundYSort/Player
 
 onready var meeting_manager = $MeetingManager
 onready var room_manager = $RoomManager
 
-onready var computer = $YSort/Objects/Computer
-onready var router = $YSort/Objects/Router
-onready var bed = $YSort/Objects/Bed
+onready var computer = $OnTableYSort/Computer
+onready var router = $OnTableYSort/Router
+onready var bed = $GroundYSort/Bed
 
 onready var points_display = $CanvasLayer/GameUI/MarginContainer/Rows/BottomRow/PointsDisplay
 onready var meeting_display = $CanvasLayer/GameUI/MarginContainer/Rows/BottomRow/MeetingDisplay
