@@ -9,6 +9,7 @@ onready var input_finished_clear_timer = $InputFinishedClearTimer
 var text_to_type: String = ""
 var current_character_index: int = -1
 var requires_completion: bool = false
+var current_requestor = null # computer, router, or bed
 
 
 signal input_finished
@@ -28,8 +29,9 @@ func show_typing_session():
 	show()
 
 
-func start_typing_session(prompt: Prompt, requires_completion: bool = false):
+func start_typing_session(prompt: Prompt, requestor, requires_completion: bool = false):
 	if prompt != null:
+		current_requestor = requestor
 		self.requires_completion = requires_completion
 		prompt_text.text = prompt.prompt
 		input_text.text = prompt.response

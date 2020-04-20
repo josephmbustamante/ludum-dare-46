@@ -64,7 +64,7 @@ func handle_input_request(prompt, requestor) -> void:
 	if requestor == bed:
 		prompt_requires_completion = true
 
-	typing_panel.start_typing_session(prompt, prompt_requires_completion)
+	typing_panel.start_typing_session(prompt, requestor, prompt_requires_completion)
 
 
 func handle_input_complete() -> void:
@@ -91,7 +91,11 @@ func handle_meeting_finished(point_breakdowns: Array, total_points: int):
 	computer.set_current_meeting(null)
 	meeting_recap_display.set_meeting_recap_display(point_breakdowns, total_points)
 	points_display.update_points(points)
-	typing_panel.exit_typing_session()
+
+	# If a meeting ends and we have a meeting prompt open, close it - but only
+	# if it is for a meeting (and not a router or bed prompt)
+	if typing_panel.current_requestor == computer:
+		typing_panel.exit_typing_session()
 
 
 func handle_game_over():
