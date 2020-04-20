@@ -78,6 +78,7 @@ func handle_meeting_started(meeting: Meeting, number: int):
 	router.set_difficulty_multiplier(number)
 	player.set_difficulty_multiplier(number)
 	meeting.set_difficulty_multiplier(number)
+	meeting.connect("meeting_lost", self, "handle_game_over")
 
 
 func handle_meeting_finished(point_breakdowns: Array, total_points: int):
@@ -89,6 +90,10 @@ func handle_meeting_finished(point_breakdowns: Array, total_points: int):
 	computer.set_current_meeting(null)
 	meeting_recap_display.set_meeting_recap_display(point_breakdowns, total_points)
 	points_display.update_points(points)
+
+
+func handle_game_over():
+	print("game over!")
 
 
 func _unhandled_input(event: InputEvent) -> void:

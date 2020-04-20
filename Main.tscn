@@ -164,6 +164,22 @@ current = true
 zoom = Vector2( 0.4, 0.4 )
 script = ExtResource( 16 )
 
+[node name="VirtualMeetingSimulatorLabel" type="Label" parent="."]
+margin_left = 147.0
+margin_top = 16.0
+margin_right = 372.0
+margin_bottom = 49.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.607843, 0.611765, 0.709804, 1 )
+custom_constants/shadow_as_outline = 1
+text = "VIRTUAL MEETING SIMULATOR"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="RoomManager" parent="." instance=ExtResource( 12 )]
 
 [node name="MeetingManager" parent="." instance=ExtResource( 9 )]
@@ -459,26 +475,12 @@ position = Vector2( 109, 75 )
 visible = false
 position = Vector2( 200, 64 )
 
+[node name="MessagePanel" parent="." instance=ExtResource( 20 )]
+position = Vector2( 33, 11 )
+
 [node name="TypingPanel" parent="." instance=ExtResource( 6 )]
 visible = false
-
-[node name="MessagePanel" parent="." instance=ExtResource( 20 )]
-
-[node name="VirtualMeetingSimulatorLabel" type="Label" parent="."]
-margin_left = 147.0
-margin_top = 16.0
-margin_right = 372.0
-margin_bottom = 49.0
-rect_scale = Vector2( 0.5, 0.5 )
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0.607843, 0.611765, 0.709804, 1 )
-custom_constants/shadow_as_outline = 1
-text = "VIRTUAL MEETING SIMULATOR"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+position = Vector2( 33, 10 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
