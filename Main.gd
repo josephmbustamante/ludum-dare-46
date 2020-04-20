@@ -19,6 +19,7 @@ onready var meeting_recap_display = $CanvasLayer/GameUI/MarginContainer/Rows/Mid
 onready var selected_object_notifier = $SelectedObjectNotifier
 onready var typing_panel = $TypingPanel
 onready var message_panel = $MessagePanel
+onready var game_over_panel = $GameOverPanel
 
 
 var interactable_objects: Array = []
@@ -94,6 +95,12 @@ func handle_meeting_finished(point_breakdowns: Array, total_points: int):
 
 func handle_game_over():
 	print("game over!")
+	message_panel.hide()
+	typing_panel.hide()
+	meeting_display.hide()
+	points_display.hide()
+	room_display.hide()
+	game_over_panel.show()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -150,3 +157,6 @@ func _on_Player_player_interacted_with_object() -> void:
 func _on_Player_player_stress_level_changed(new_stress_level) -> void:
 	room_display.handle_stress_level_changed(new_stress_level)
 
+
+func _on_PlayAgainButton_pressed() -> void:
+	get_tree().change_scene("res://TitleScreen.tscn")

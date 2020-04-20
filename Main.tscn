@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://wall_and_floor_tileset.tres" type="TileSet" id=2]
@@ -20,6 +20,9 @@
 [ext_resource path="res://Objects/Bed.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Assets/roguelike-modern-city-pack/Spritesheet/roguelikeCity_magenta.png" type="Texture" id=19]
 [ext_resource path="res://MessagePanel.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Assets/uipack_fixed/Vector/UIpack_vector.svg" type="Texture" id=21]
+[ext_resource path="res://UI/FontSize42.tres" type="DynamicFont" id=22]
+[ext_resource path="res://MessagePanel.gd" type="Script" id=23]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 6 )
@@ -131,6 +134,37 @@ region = Rect2( 528, 204, 14, 16 )
 [sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 19 )
 region = Rect2( 530, 172, 10, 14 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 21 )
+region = Rect2( 1260, 300, 192, 56 )
+
+[sub_resource type="StyleBoxTexture" id=32]
+texture = ExtResource( 21 )
+region_rect = Rect2( 0, 0, 192, 52 )
+margin_left = 11.3418
+margin_right = 10.5017
+margin_top = 8.40136
+margin_bottom = 14.2823
+modulate_color = Color( 0.317647, 0.317647, 0.356863, 1 )
+
+[sub_resource type="StyleBoxTexture" id=33]
+texture = ExtResource( 21 )
+region_rect = Rect2( 420, 0, 192, 52 )
+margin_left = 7.74047
+margin_right = 10.3206
+margin_top = 12.5322
+margin_bottom = 10.3206
+modulate_color = Color( 0.317647, 0.317647, 0.356863, 1 )
+
+[sub_resource type="StyleBoxTexture" id=34]
+texture = ExtResource( 21 )
+region_rect = Rect2( 0, 0, 192, 52 )
+margin_left = 11.3418
+margin_right = 10.5017
+margin_top = 8.40136
+margin_bottom = 14.2823
+modulate_color = Color( 0.388235, 0.392157, 0.439216, 1 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 7 )
@@ -482,11 +516,125 @@ position = Vector2( 33, 11 )
 visible = false
 position = Vector2( 33, 10 )
 
+[node name="GameOverPanel" type="Node2D" parent="."]
+pause_mode = 2
+visible = false
+position = Vector2( 33, 11 )
+script = ExtResource( 23 )
+
+[node name="PanelBackground" type="NinePatchRect" parent="GameOverPanel"]
+modulate = Color( 0.568627, 0.388235, 0.388235, 1 )
+margin_right = 341.0
+margin_bottom = 201.0
+texture = SubResource( 31 )
+patch_margin_left = 13
+patch_margin_top = 13
+patch_margin_right = 12
+patch_margin_bottom = 14
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MessageBackground" type="NinePatchRect" parent="GameOverPanel"]
+modulate = Color( 0.952941, 0.490196, 0.466667, 1 )
+margin_left = 5.0
+margin_top = 4.0
+margin_right = 336.0
+margin_bottom = 198.0
+texture = SubResource( 31 )
+patch_margin_left = 14
+patch_margin_top = 15
+patch_margin_right = 11
+patch_margin_bottom = 18
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverText" type="Label" parent="GameOverPanel"]
+margin_left = 12.0
+margin_top = 16.0
+margin_right = 812.0
+margin_bottom = 146.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = ExtResource( 22 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "Oh no! Unfortunately, everyone grew frustrated with your meeting and left."
+align = 1
+autowrap = true
+
+[node name="FinalScoreLabel" type="Label" parent="GameOverPanel"]
+margin_left = 19.0
+margin_top = 90.0
+margin_right = 314.0
+margin_bottom = 145.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = ExtResource( 22 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "FINAL SCORE"
+align = 1
+
+[node name="FinalScoreValue" type="Label" parent="GameOverPanel"]
+margin_left = 20.0
+margin_top = 114.0
+margin_right = 302.0
+margin_bottom = 169.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = ExtResource( 22 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "0"
+align = 1
+
+[node name="RatingLabel" type="Label" parent="GameOverPanel"]
+margin_left = 197.0
+margin_top = 89.0
+margin_right = 487.0
+margin_bottom = 144.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = ExtResource( 22 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "YOUR RATING"
+align = 1
+
+[node name="RatingValue" type="Label" parent="GameOverPanel"]
+margin_left = 191.0
+margin_top = 113.0
+margin_right = 521.0
+margin_bottom = 168.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = ExtResource( 22 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "AVERAGE"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayAgainButton" type="Button" parent="GameOverPanel"]
+pause_mode = 2
+margin_left = 84.0
+margin_top = 141.0
+margin_right = 245.844
+margin_bottom = 185.684
+custom_styles/hover = SubResource( 32 )
+custom_styles/pressed = SubResource( 33 )
+custom_styles/normal = SubResource( 34 )
+custom_fonts/font = ExtResource( 3 )
+text = "PLAY AGAIN"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GameUI" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -494,6 +642,7 @@ __meta__ = {
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/GameUI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 custom_constants/margin_right = 10
 custom_constants/margin_top = 10
 custom_constants/margin_left = 10
@@ -507,42 +656,49 @@ margin_left = 10.0
 margin_top = 10.0
 margin_right = 1014.0
 margin_bottom = 590.0
+mouse_filter = 2
 
 [node name="TopRow" type="HBoxContainer" parent="CanvasLayer/GameUI/MarginContainer/Rows"]
 margin_right = 1004.0
+mouse_filter = 2
 alignment = 1
 
 [node name="MiddleRow" type="HBoxContainer" parent="CanvasLayer/GameUI/MarginContainer/Rows"]
 margin_top = 4.0
 margin_right = 1004.0
 margin_bottom = 480.0
+mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GameUI/MarginContainer/Rows/MiddleRow"]
 margin_right = 279.0
 margin_bottom = 476.0
+mouse_filter = 2
 alignment = 2
 
 [node name="MeetingRecapDisplay" parent="CanvasLayer/GameUI/MarginContainer/Rows/MiddleRow/VBoxContainer" instance=ExtResource( 15 )]
 margin_top = 335.0
 margin_bottom = 476.586
-mouse_filter = 1
+mouse_filter = 2
 
 [node name="BottomRow" type="HBoxContainer" parent="CanvasLayer/GameUI/MarginContainer/Rows"]
 margin_top = 484.0
 margin_right = 1004.0
 margin_bottom = 580.0
+mouse_filter = 2
 alignment = 1
 
 [node name="PointsDisplay" parent="CanvasLayer/GameUI/MarginContainer/Rows/BottomRow" instance=ExtResource( 14 )]
 margin_right = 332.0
+mouse_filter = 2
 alignment = 2
 
 [node name="MeetingDisplay" parent="CanvasLayer/GameUI/MarginContainer/Rows/BottomRow" instance=ExtResource( 10 )]
 margin_left = 336.0
 margin_right = 668.0
 margin_bottom = 96.0
+mouse_filter = 2
 size_flags_horizontal = 3
 alignment = 2
 
@@ -552,8 +708,10 @@ anchor_bottom = 0.0
 margin_left = 672.0
 margin_right = 1004.0
 margin_bottom = 96.0
+mouse_filter = 2
 alignment = 2
 [connection signal="player_can_interact_with_object" from="GroundYSort/Player" to="." method="_on_Player_player_can_interact_with_object"]
 [connection signal="player_cannot_interact_with_object" from="GroundYSort/Player" to="." method="_on_Player_player_cannot_interact_with_object"]
 [connection signal="player_interacted_with_object" from="GroundYSort/Player" to="." method="_on_Player_player_interacted_with_object"]
 [connection signal="player_stress_level_changed" from="GroundYSort/Player" to="." method="_on_Player_player_stress_level_changed"]
+[connection signal="pressed" from="GameOverPanel/PlayAgainButton" to="." method="_on_PlayAgainButton_pressed"]

@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/uipack_fixed/Vector/UIpack_vector.svg" type="Texture" id=2]
 [ext_resource path="res://UI/FontSize42.tres" type="DynamicFont" id=3]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 2 )
 region = Rect2( 1260, 300, 192, 56 )
 
@@ -32,7 +32,7 @@ script = ExtResource( 1 )
 modulate = Color( 0.8, 0.8, 0.8, 1 )
 margin_right = 344.0
 margin_bottom = 64.0
-texture = SubResource( 1 )
+texture = SubResource( 31 )
 patch_margin_left = 13
 patch_margin_top = 13
 patch_margin_right = 12
@@ -47,7 +47,7 @@ margin_left = 4.0
 margin_top = 4.0
 margin_right = 340.0
 margin_bottom = 60.0
-texture = SubResource( 1 )
+texture = SubResource( 31 )
 patch_margin_left = 14
 patch_margin_top = 15
 patch_margin_right = 11
