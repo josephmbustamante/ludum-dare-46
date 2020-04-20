@@ -38,7 +38,7 @@ func _ready() -> void:
 	meeting_manager.connect("time_until_next_meeting_changed", meeting_display, "set_time_until_next_meeting_text")
 
 	room_manager.set_router(router)
-	router.connect("wifi_level_changed", room_display, "handle_wifi_level_changed")
+	router.connect("wifi_level_changed", self, "handle_wifi_level_changed")
 	bed.set_player(player)
 
 	computer.connect("request_input", self, "handle_input_request", [computer])
