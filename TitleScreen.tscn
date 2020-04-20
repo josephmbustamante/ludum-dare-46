@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://UI/FontSize12.tres" type="DynamicFont" id=1]
 [ext_resource path="res://UI/FontSize24.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/uipack_fixed/Vector/UIpack_vector.svg" type="Texture" id=3]
 [ext_resource path="res://TitleScreen.gd" type="Script" id=4]
 [ext_resource path="res://Assets/title-background-with-meeting-and-room-status.png" type="Texture" id=5]
+[ext_resource path="res://Assets/sounds/intro.wav" type="AudioStream" id=6]
 
-[sub_resource type="StyleBoxTexture" id=32]
+[sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 192, 52 )
 margin_left = 11.3418
@@ -15,7 +16,7 @@ margin_top = 8.40136
 margin_bottom = 14.2823
 modulate_color = Color( 0.317647, 0.317647, 0.356863, 1 )
 
-[sub_resource type="StyleBoxTexture" id=33]
+[sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 3 )
 region_rect = Rect2( 420, 0, 192, 52 )
 margin_left = 7.74047
@@ -24,7 +25,7 @@ margin_top = 12.5322
 margin_bottom = 10.3206
 modulate_color = Color( 0.317647, 0.317647, 0.356863, 1 )
 
-[sub_resource type="StyleBoxTexture" id=34]
+[sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 192, 52 )
 margin_left = 11.3418
@@ -58,9 +59,9 @@ margin_left = 388.0
 margin_top = 337.0
 margin_right = 619.0
 margin_bottom = 392.0
-custom_styles/hover = SubResource( 32 )
-custom_styles/pressed = SubResource( 33 )
-custom_styles/normal = SubResource( 34 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 custom_fonts/font = ExtResource( 2 )
 text = "PLAY"
 __meta__ = {
@@ -72,9 +73,9 @@ margin_left = 388.0
 margin_top = 400.0
 margin_right = 619.0
 margin_bottom = 455.0
-custom_styles/hover = SubResource( 32 )
-custom_styles/pressed = SubResource( 33 )
-custom_styles/normal = SubResource( 34 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 custom_fonts/font = ExtResource( 2 )
 text = "SHOW TUTORIALS"
 __meta__ = {
@@ -358,5 +359,9 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
 text = "Try to see how many points you can get keeping your virtual meetings alive. Press the start button to begin playing."
 autowrap = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="ShowTutorialButton" to="." method="_on_ShowTutorialButton_pressed"]
