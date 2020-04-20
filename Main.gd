@@ -91,6 +91,7 @@ func handle_meeting_finished(point_breakdowns: Array, total_points: int):
 	computer.set_current_meeting(null)
 	meeting_recap_display.set_meeting_recap_display(point_breakdowns, total_points)
 	points_display.update_points(points)
+	typing_panel.exit_typing_session()
 
 
 func handle_game_over():

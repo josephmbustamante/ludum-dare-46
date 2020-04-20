@@ -22,7 +22,7 @@ func interact():
 		return
 
 	var prompt = Prompt.new()
-	prompt.prompt = "You are sleeping. Type \"wake up\" to stop."
+	prompt.prompt = "You are sleeping. You have to type \"wake up\" to stop."
 	prompt.response = "wake up"
 	player.stop_stress_timer()
 	stress_restore_tick_timer.start()
