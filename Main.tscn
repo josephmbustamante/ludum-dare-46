@@ -463,7 +463,7 @@ position = Vector2( 200, 64 )
 visible = false
 
 [node name="MessagePanel" parent="." instance=ExtResource( 20 )]
-visible = false
+modulate = Color( 1, 1, 1, 0 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

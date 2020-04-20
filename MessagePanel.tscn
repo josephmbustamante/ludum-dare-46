@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://MessagePanel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/uipack_fixed/Vector/UIpack_vector.svg" type="Texture" id=2]
@@ -8,7 +8,24 @@
 atlas = ExtResource( 2 )
 region = Rect2( 1260, 300, 192, 56 )
 
+[sub_resource type="Animation" id=2]
+resource_name = "show"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [node name="MessagePanel" type="Node2D"]
+modulate = Color( 1, 1, 1, 0 )
 script = ExtResource( 1 )
 
 [node name="PanelBackground" type="NinePatchRect" parent="."]
@@ -52,3 +69,7 @@ scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/show = SubResource( 2 )
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
