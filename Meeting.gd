@@ -40,6 +40,7 @@ var participant_first_names = [
 	"Angela",
 	"Jim",
 	"Joanna",
+	"Anne",
 ]
 
 var participant_last_names = [
@@ -58,6 +59,7 @@ var participant_last_names = [
 	"Banner",
 	"Wayne",
 	"Kitchens",
+	"Perkins",
 ]
 
 

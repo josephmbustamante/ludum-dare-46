@@ -54,14 +54,19 @@ func clear_question():
 
 func get_participant_question():
 	var questions = [
-		{"prompt": "Help! What color is the sky?!", "response": "It's still blue"},
+		{"prompt": "Help! What color is the sky?!", "response": "It's still blue."},
 		{"prompt": "Are you still there?", "response": "Yeah, still here."},
 		{"prompt": "What day is it?", "response": "Ha, I have no idea."},
 		{"prompt": "Stepping away for a moment", "response": "Finally, about time."},
-		{"prompt": "... ... (confused look intensifies) ...!!!!", "response": "You're muted"},
-		{"prompt": "Wait, what meeting is this?", "response": "The best one"},
-		{"prompt": "When are the TPS reports due?", "response": "You'll have to finish them on Saturday."},
-		{"prompt": "Can we circle back to that last point?", "response": "I dislike your overuse of business lingo."}
+		{"prompt": "... ... (confused look intensifies) ...!!!!", "response": "You're muted!"},
+		{"prompt": "Wait, what meeting is this?", "response": "The best one."},
+		{"prompt": "When are the TPS reports due?", "response": "By Saturday."},
+		{"prompt": "Can we circle back to that last point?", "response": "No, we cannot."},
+		{"prompt": "Is this related to a key performance metric?", "response": "What are those?."},
+		{"prompt": "Will this have an affect on team velocity?", "response": "Most assuredly."},
+		{"prompt": "How can we increase consumer buy-in?", "response": "Nobody cares!"},
+		{"prompt": "Do you mind if I punt this until next week?", "response": "Do your job!"},
+		{"prompt": "Is this a robust, scalable solution?", "response": "Is this a what?"},
 	]
 
 	randomize()
