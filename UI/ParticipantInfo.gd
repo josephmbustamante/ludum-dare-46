@@ -2,10 +2,20 @@ extends PanelContainer
 class_name ParticipantInfo
 
 
-onready var participant_image = $MarginContainer/HBoxContainer/ParticipantImage
 onready var participant_name = $MarginContainer/HBoxContainer/VBoxContainer/ParticipantName
 onready var participant_engagement = $MarginContainer/HBoxContainer/VBoxContainer/ParticipantEngagement
 onready var participant_status = $MarginContainer/HBoxContainer/VBoxContainer/ParticipantStatus
+onready var image_containers = $MarginContainer/HBoxContainer/ImageContainers
+
+
+func _ready() -> void:
+	var images = image_containers.get_children()
+	for image in images:
+		image.hide()
+
+	randomize()
+	var rand = randi() % images.size()
+	images[rand].show()
 
 
 func update_participant_name(participant_name: String):
