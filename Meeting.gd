@@ -4,6 +4,7 @@ class_name Meeting
 
 signal meeting_duration_changed(new_duration)
 signal meeting_finished(point_breakdowns, total_points)
+signal meeting_lost()
 
 
 export (String) var meeting_name = "REGIONAL SALES MEETING"
@@ -20,6 +21,8 @@ onready var participants = $Participants
 
 var current_points: int = 0
 var point_breakdowns: Array = []
+var active_participants: int = 3
+
 
 export (int) var difficulty_multiplier = 0 setget set_difficulty_multiplier
 
@@ -30,7 +33,18 @@ func set_difficulty_multiplier(multiplier):
 		participant.set_difficulty_multiplier(multiplier)
 
 func start_meeting():
+	for participant in participants.get_children():
+		participant.connect("participant_left_meeting", self, "handle_participant_left_meeting", [participant])
+
 	meeting_tick_timer.start()
+
+
+func handle_participant_left_meeting(participant: Participant):
+	current_points += participant_left_points
+	point_breakdowns.append({ "reason": "%s %s left the meeting" % [participant.first_name, participant.last_name], "value": participant_left_points })
+	active_participants -= 1
+	if active_participants == 0:
+		emit_signal("meeting_lost")
 
 
 func finish_meeting():

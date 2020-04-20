@@ -44,6 +44,7 @@ func set_meeting_display(meeting: Meeting):
 
 		participant.connect("participant_engagement_level_changed", new_info_scene, "update_participant_engagement_level")
 		participant.connect("participant_status_changed", new_info_scene, "update_participant_status")
+		participant.connect("participant_left_meeting", new_info_scene, "handle_participant_left_meeting")
 
 
 func clear_meeting_display(_point_breakdowns: Array, _total_points: int):

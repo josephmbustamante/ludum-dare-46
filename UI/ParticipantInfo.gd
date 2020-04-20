@@ -7,11 +7,18 @@ onready var participant_name = $MarginContainer/HBoxContainer/VBoxContainer/Part
 onready var participant_engagement = $MarginContainer/HBoxContainer/VBoxContainer/ParticipantEngagement
 onready var participant_status = $MarginContainer/HBoxContainer/VBoxContainer/ParticipantStatus
 
+
 func update_participant_name(participant_name: String):
 	self.participant_name.text = participant_name
+
 
 func update_participant_engagement_level(new_engagement_level: int):
 	participant_engagement.value = new_engagement_level
 
+
 func update_participant_status(status: String):
 	participant_status.text = status
+
+
+func handle_participant_left_meeting():
+	participant_name.set("custom_colors/font_color", Color.red)

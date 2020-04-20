@@ -11,7 +11,7 @@ func set_point_change_label(point_change: int):
 		point_change_label.text = "+" + str(point_change)
 	elif point_change < 0:
 		point_change_label.set("custom_colors/font_color", Color.red)
-		point_change_label.text = "-" + str(point_change)
+		point_change_label.text = str(point_change)
 	else:
 		point_change_label.set("custom_colors/font_color", Color.white)
 		point_change_label.text = "~" + str(point_change)
