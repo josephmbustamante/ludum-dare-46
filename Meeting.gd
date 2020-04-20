@@ -26,7 +26,7 @@ func set_difficulty_multiplier(multiplier):
 	difficulty_multiplier = multiplier
 	for participant in participants.get_children():
 		participant.set_difficulty_multiplier(multiplier)
-	
+
 func start_meeting():
 	meeting_tick_timer.start()
 
