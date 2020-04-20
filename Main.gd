@@ -55,7 +55,7 @@ func handle_show_message(message):
 func handle_wifi_level_changed(level):
 	room_display.handle_wifi_level_changed(level)
 	computer.handle_wifi_level_changed(level)
-	
+
 func handle_input_request(prompt, requestor) -> void:
 	current_input_requestor = requestor
 	var prompt_requires_completion = false
@@ -144,3 +144,4 @@ func _on_Player_player_interacted_with_object() -> void:
 
 func _on_Player_player_stress_level_changed(new_stress_level) -> void:
 	room_display.handle_stress_level_changed(new_stress_level)
+
