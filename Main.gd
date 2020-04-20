@@ -18,6 +18,7 @@ onready var meeting_recap_display = $CanvasLayer/GameUI/MarginContainer/Rows/Mid
 
 onready var selected_object_notifier = $SelectedObjectNotifier
 onready var typing_panel = $TypingPanel
+onready var message_panel = $MessagePanel
 
 
 var interactable_objects: Array = []
@@ -41,12 +42,20 @@ func _ready() -> void:
 	bed.set_player(player)
 
 	computer.connect("request_input", self, "handle_input_request", [computer])
+	computer.connect("show_message", self, "handle_show_message")
 	router.connect("request_input", self, "handle_input_request", [router])
 	bed.connect("request_input", self, "handle_input_request", [bed])
 	typing_panel.connect("input_finished", self, "handle_input_complete")
 	typing_panel.connect("input_incorrect", camera, "add_trauma")
 
+func handle_show_message(message):
+	print("Got message: %s" % message)
+	message_panel.show_message(message)
 
+func handle_wifi_level_changed(level):
+	room_display.handle_wifi_level_changed(level)
+	computer.handle_wifi_level_changed(level)
+	
 func handle_input_request(prompt, requestor) -> void:
 	current_input_requestor = requestor
 	var prompt_requires_completion = false

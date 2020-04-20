@@ -6,18 +6,22 @@ export (GlobalEnums.ObjectTypes) var object_type = GlobalEnums.ObjectTypes.COMPU
 
 var current_meeting: Meeting = null
 var current_prompt: ParticipantPrompt = null
+var wifi_works: bool = true
 signal request_input(prompt)
+signal show_message(message)
 
 
 func interact():
-	if current_meeting != null:
+	if !wifi_works:
+		print("No Wifi!")
+		emit_signal("show_message", "ERROR: No wifi signal")
+	elif current_meeting != null:
 		print("Emitting request input")
 		current_prompt = current_meeting.get_oldest_prompt()
 		emit_signal("request_input", current_prompt)
-	# else:
-		# TODO: trigger an informational message that says there's nothing to do
-		# with the computer right now. Wait for a meeting to start.
-
+	else:
+		print("NO MEETING")
+		emit_signal("show_message", "No meeting in progress")
 
 func set_current_meeting(meeting: Meeting):
 	print("Set current meeting %s" % meeting)
@@ -28,3 +32,9 @@ func set_current_meeting(meeting: Meeting):
 func handle_input_complete(status) -> void:
 	if current_meeting != null:
 		current_meeting.handle_prompt_completed(current_prompt, status)
+
+func handle_wifi_level_changed(level: int):
+	if (level == 0):
+		wifi_works = false
+	else:
+		wifi_works = true

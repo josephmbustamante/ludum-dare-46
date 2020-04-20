@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://MessagePanel.gd" type="Script" id=1]
+[ext_resource path="res://Assets/uipack_fixed/Vector/UIpack_vector.svg" type="Texture" id=2]
+[ext_resource path="res://UI/FontSize42.tres" type="DynamicFont" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 1260, 300, 192, 56 )
+
+[node name="MessagePanel" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="PanelBackground" type="NinePatchRect" parent="."]
+modulate = Color( 0.8, 0.8, 0.8, 1 )
+margin_right = 344.0
+margin_bottom = 64.0
+texture = SubResource( 1 )
+patch_margin_left = 13
+patch_margin_top = 13
+patch_margin_right = 12
+patch_margin_bottom = 14
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MessageBackground" type="NinePatchRect" parent="."]
+modulate = Color( 0.47451, 0.482353, 0.509804, 1 )
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 340.0
+margin_bottom = 60.0
+texture = SubResource( 1 )
+patch_margin_left = 14
+patch_margin_top = 15
+patch_margin_right = 11
+patch_margin_bottom = 18
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MessageText" type="RichTextLabel" parent="."]
+margin_left = 12.0
+margin_top = 16.0
+margin_right = 812.0
+margin_bottom = 106.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/normal_font = ExtResource( 3 )
+custom_colors/default_color = Color( 0.266667, 0.0627451, 0.564706, 1 )
+text = "I missed your last point. Could you repeat that?"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
