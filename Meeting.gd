@@ -6,8 +6,8 @@ signal meeting_duration_changed(new_duration)
 signal meeting_finished(point_breakdowns, total_points)
 
 
-export (String) var meeting_name = "Meeting Name Goes Here"
-export (int) var meeting_duration = 60
+export (String) var meeting_name = "REGIONAL SALES MEETING"
+export (int) var meeting_duration = 30
 
 export (int) var prompt_completed_points = 10
 export (int) var meeting_finished_base_points = 30
@@ -22,6 +22,8 @@ var current_points: int = 0
 var point_breakdowns: Array = []
 
 export (int) var difficulty_multiplier = 0 setget set_difficulty_multiplier
+
+
 func set_difficulty_multiplier(multiplier):
 	difficulty_multiplier = multiplier
 	for participant in participants.get_children():
@@ -49,7 +51,7 @@ func get_meeting_participants() -> Array:
 
 func _on_MeetingTickTimer_timeout() -> void:
 	for participant in participants.get_children():
-		participant.engagement_level -= 0.5
+		participant.engagement_level -= 0.5 * difficulty_multiplier
 
 	meeting_duration -= 1
 	emit_signal("meeting_duration_changed", meeting_duration)
@@ -81,5 +83,5 @@ func handle_prompt_completed(prompt: ParticipantPrompt, success: bool) -> void:
 	for participant in participants.get_children():
 		if participant.last_name == prompt.participant_last_name:
 			point_breakdowns.append({ "reason": "Question answered for %s" % participant.first_name, "value": prompt_completed_points})
-			participant.engagement_level += 5
+			participant.engagement_level += 10
 			participant.clear_question()

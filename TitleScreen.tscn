@@ -6,7 +6,7 @@
 [ext_resource path="res://TitleScreen.gd" type="Script" id=4]
 [ext_resource path="res://Assets/title-background-with-meeting-and-room-status.png" type="Texture" id=5]
 
-[sub_resource type="StyleBoxTexture" id=32]
+[sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 192, 52 )
 margin_left = 11.3418
@@ -15,7 +15,7 @@ margin_top = 8.40136
 margin_bottom = 14.2823
 modulate_color = Color( 0.317647, 0.317647, 0.356863, 1 )
 
-[sub_resource type="StyleBoxTexture" id=33]
+[sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 3 )
 region_rect = Rect2( 420, 0, 192, 52 )
 margin_left = 7.74047
@@ -24,7 +24,7 @@ margin_top = 12.5322
 margin_bottom = 10.3206
 modulate_color = Color( 0.317647, 0.317647, 0.356863, 1 )
 
-[sub_resource type="StyleBoxTexture" id=34]
+[sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 192, 52 )
 margin_left = 11.3418
@@ -33,7 +33,7 @@ margin_top = 8.40136
 margin_bottom = 14.2823
 modulate_color = Color( 0.388235, 0.392157, 0.439216, 1 )
 
-[sub_resource type="StyleBoxTexture" id=1]
+[sub_resource type="StyleBoxTexture" id=4]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 304, 104, 112 )
 margin_left = 12.3478
@@ -58,9 +58,9 @@ margin_left = 388.0
 margin_top = 337.0
 margin_right = 619.0
 margin_bottom = 392.0
-custom_styles/hover = SubResource( 32 )
-custom_styles/pressed = SubResource( 33 )
-custom_styles/normal = SubResource( 34 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 custom_fonts/font = ExtResource( 2 )
 text = "PLAY"
 __meta__ = {
@@ -72,9 +72,9 @@ margin_left = 388.0
 margin_top = 400.0
 margin_right = 619.0
 margin_bottom = 455.0
-custom_styles/hover = SubResource( 32 )
-custom_styles/pressed = SubResource( 33 )
-custom_styles/normal = SubResource( 34 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 custom_fonts/font = ExtResource( 2 )
 text = "SHOW TUTORIALS"
 __meta__ = {
@@ -91,7 +91,7 @@ margin_left = 318.0
 margin_top = 105.2
 margin_right = 392.0
 margin_bottom = 165.2
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -130,7 +130,7 @@ margin_left = 197.0
 margin_top = 43.0
 margin_right = 278.0
 margin_bottom = 123.0
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -169,7 +169,7 @@ margin_left = 319.0
 margin_top = 31.0
 margin_right = 400.0
 margin_bottom = 111.0
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -208,7 +208,7 @@ margin_left = 17.6
 margin_top = 34.8
 margin_right = 95.6
 margin_bottom = 113.8
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -247,7 +247,7 @@ margin_left = 282.0
 margin_top = 160.0
 margin_right = 404.0
 margin_bottom = 219.0
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -278,7 +278,7 @@ size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
-text = "Meetings will automatically start every 10 seconds, and last for 60 seconds. Each participant has an engagement level - if that hits 0, they'll leave the meeting."
+text = "Meetings will automatically start every 10 seconds, and last for 30 seconds. Each participant has an engagement level - if that hits 0, they'll leave the meeting."
 autowrap = true
 
 [node name="PointsTutorial" type="Panel" parent="Tutorials"]
@@ -286,7 +286,7 @@ margin_left = 0.400003
 margin_top = 176.4
 margin_right = 125.4
 margin_bottom = 232.4
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -325,7 +325,7 @@ margin_left = 74.4
 margin_top = 110.0
 margin_right = 150.4
 margin_bottom = 177.0
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
