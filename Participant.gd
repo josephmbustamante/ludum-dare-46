@@ -29,6 +29,7 @@ func set_engagement_level(new_engagement_level: int):
 	engagement_level = clamp(new_engagement_level, 0, 100)
 	emit_signal("participant_engagement_level_changed", engagement_level)
 
+	randomize()
 	if engagement_level == 0:
 		has_left_meeting = true
 		clear_question()
@@ -55,9 +56,13 @@ func get_participant_question():
 	var questions = [
 		{"prompt": "Help! What color is the sky?!", "response": "It's still blue"},
 		{"prompt": "Are you still there?", "response": "Yeah, still here."},
-		{"prompt": "What day is it?", "response": "Hahaha I don't know either"},
-		{"prompt": "Stepping away for a moment", "response": "kk"},
+		{"prompt": "What day is it?", "response": "Ha, I have no idea."},
+		{"prompt": "Stepping away for a moment", "response": "Finally, about time."},
 		{"prompt": "... ... (confused look intensifies) ...!!!!", "response": "You're muted"},
-		{"prompt": "Wait, what meeting is this?", "response": "The best one"}
+		{"prompt": "Wait, what meeting is this?", "response": "The best one"},
+		{"prompt": "When are the TPS reports due?", "response": "You'll have to finish them on Saturday."},
+		{"prompt": "Can we circle back to that last point?", "response": "I dislike your overuse of business lingo."}
 	]
+
+	randomize()
 	return questions[randi() % questions.size()]

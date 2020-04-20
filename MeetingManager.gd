@@ -20,6 +20,29 @@ var meeting_count = 0;
 
 var time_until_next_meeting: int = -1 #seconds
 
+var meeting_name_first_word = [
+	"REGIONAL",
+	"EXECUTIVE",
+	"IMPORTANT",
+	"CONFIDENTIAL",
+	"ANNUAL",
+	"WEEKLY",
+	"DAILY",
+	"MONTHLY",
+	"QUARTERLY"
+]
+
+var meeting_name_second_word = [
+	"BOARD MEETING",
+	"SALES MEETING",
+	"MOTIVATIONAL SERIES",
+	"SELF-HELP GROUP",
+	"ROUND TABLE",
+	"GOAL PLANNING",
+	"DESIGN WORKSHOP",
+	"GROUPTHINK SESSION"
+]
+
 
 func begin_new_meeting_timer():
 	new_meeting_timer.start()
@@ -27,10 +50,12 @@ func begin_new_meeting_timer():
 
 
 func start_meeting() -> Meeting:
+	randomize()
 	meeting_count += 1;
 	meeting = meeting_scene.instance()
 	add_child(meeting)
-	meeting.start_meeting()
+	var meeting_name = meeting_name_first_word[randi() % meeting_name_first_word.size()] + " " + meeting_name_second_word[randi() % meeting_name_second_word.size()]
+	meeting.start_meeting(meeting_name)
 	emit_signal("meeting_started", meeting, meeting_count)
 	meeting.connect("meeting_finished", self, "finish_meeting")
 	return meeting

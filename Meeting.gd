@@ -32,7 +32,9 @@ func set_difficulty_multiplier(multiplier):
 	for participant in participants.get_children():
 		participant.set_difficulty_multiplier(multiplier)
 
-func start_meeting():
+func start_meeting(meeting_name: String):
+	self.meeting_name = meeting_name
+
 	for participant in participants.get_children():
 		participant.connect("participant_left_meeting", self, "handle_participant_left_meeting", [participant])
 
