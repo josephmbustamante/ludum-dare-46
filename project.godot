@@ -57,7 +57,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Ludum Dare 46"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://TitleScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
