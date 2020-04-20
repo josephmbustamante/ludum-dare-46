@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Assets/title-background.png" type="Texture" id=1]
+[ext_resource path="res://UI/FontSize12.tres" type="DynamicFont" id=1]
 [ext_resource path="res://UI/FontSize24.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/uipack_fixed/Vector/UIpack_vector.svg" type="Texture" id=3]
 [ext_resource path="res://TitleScreen.gd" type="Script" id=4]
-[ext_resource path="res://UI/Tutorials.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/title-background-with-meeting-and-room-status.png" type="Texture" id=5]
 
 [sub_resource type="StyleBoxTexture" id=32]
 texture = ExtResource( 3 )
@@ -33,20 +33,31 @@ margin_top = 8.40136
 margin_bottom = 14.2823
 modulate_color = Color( 0.388235, 0.392157, 0.439216, 1 )
 
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 304, 104, 112 )
+margin_left = 12.3478
+margin_right = 13.9411
+margin_top = 17.1276
+margin_bottom = 17.9242
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+modulate_color = Color( 0.509804, 0.521569, 0.580392, 1 )
+
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="BackgroundImage" type="Sprite" parent="."]
-position = Vector2( 102.528, 0 )
-scale = Vector2( 0.512196, 0.512196 )
-texture = ExtResource( 1 )
+position = Vector2( 2.00001, 0 )
+scale = Vector2( 1.00196, 1.00334 )
+texture = ExtResource( 5 )
 centered = false
 
 [node name="PlayButton" type="Button" parent="."]
-margin_left = 398.717
-margin_top = 523.499
-margin_right = 629.717
-margin_bottom = 578.499
+margin_left = 388.0
+margin_top = 337.0
+margin_right = 619.0
+margin_bottom = 392.0
 custom_styles/hover = SubResource( 32 )
 custom_styles/pressed = SubResource( 33 )
 custom_styles/normal = SubResource( 34 )
@@ -57,10 +68,10 @@ __meta__ = {
 }
 
 [node name="ShowTutorialButton" type="Button" parent="."]
-margin_left = 45.0
-margin_top = 523.0
-margin_right = 276.0
-margin_bottom = 578.0
+margin_left = 388.0
+margin_top = 400.0
+margin_right = 619.0
+margin_bottom = 455.0
 custom_styles/hover = SubResource( 32 )
 custom_styles/pressed = SubResource( 33 )
 custom_styles/normal = SubResource( 34 )
@@ -70,9 +81,282 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Tutorials" parent="." instance=ExtResource( 5 )]
+[node name="Tutorials" type="Node2D" parent="."]
 visible = false
 position = Vector2( 8.99999, -20 )
 scale = Vector2( 2.5, 2.5 )
+
+[node name="InteractTutorial" type="Panel" parent="Tutorials"]
+margin_left = 318.0
+margin_top = 105.2
+margin_right = 392.0
+margin_bottom = 165.2
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Tutorials/InteractTutorial"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 5.0
+margin_right = 73.0
+margin_bottom = 44.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Tutorials/InteractTutorial/MarginContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 140.0
+margin_bottom = 94.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "Press E to interact with objects, and enter or escape to stop. Use WASD or the arrows keys to move."
+autowrap = true
+
+[node name="ComputerTutorial" type="Panel" parent="Tutorials"]
+margin_left = 197.0
+margin_top = 43.0
+margin_right = 278.0
+margin_bottom = 123.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Tutorials/ComputerTutorial"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 5.0
+margin_right = 73.0
+margin_bottom = 44.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Tutorials/ComputerTutorial/MarginContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 147.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "When a meeting is in session, participants will occasionally have questions (marked by a ??? icon). Use the computer to answer them and raise engagement levels."
+autowrap = true
+
+[node name="BedTutorial" type="Panel" parent="Tutorials"]
+margin_left = 319.0
+margin_top = 31.0
+margin_right = 400.0
+margin_bottom = 111.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Tutorials/BedTutorial"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 5.0
+margin_right = 73.0
+margin_bottom = 44.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Tutorials/BedTutorial/MarginContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 147.0
+margin_bottom = 114.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "Your stress level will go up over time, causing you to move slower. Sleep in your bed to lower it. You must finish typing the prompt to stop sleeping."
+autowrap = true
+
+[node name="RouterTutorial" type="Panel" parent="Tutorials"]
+margin_left = 17.6
+margin_top = 34.8
+margin_right = 95.6
+margin_bottom = 113.8
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Tutorials/RouterTutorial"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 5.0
+margin_right = 73.0
+margin_bottom = 44.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Tutorials/RouterTutorial/MarginContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 144.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "Your WiFi strength will go down over time. If it hits 0, you won't be able to open your computer. Reset your router to boost your signal strength."
+autowrap = true
+
+[node name="EngagementTutorial" type="Panel" parent="Tutorials"]
+margin_left = 282.0
+margin_top = 160.0
+margin_right = 404.0
+margin_bottom = 219.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Tutorials/EngagementTutorial"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 5.0
+margin_right = 108.0
+margin_bottom = 44.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Tutorials/EngagementTutorial/MarginContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 223.0
+margin_bottom = 93.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "Meetings will automatically start every 10 seconds, and last for 60 seconds. Each participant has an engagement level - if that hits 0, they'll leave the meeting."
+autowrap = true
+
+[node name="PointsTutorial" type="Panel" parent="Tutorials"]
+margin_left = 0.400003
+margin_top = 176.4
+margin_right = 125.4
+margin_bottom = 232.4
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Tutorials/PointsTutorial"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 5.0
+margin_right = 114.0
+margin_bottom = 44.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Tutorials/PointsTutorial/MarginContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 232.0
+margin_bottom = 90.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "You get points for how engaged you keep people during a meeting. If a participant leaves the meeting, you lose points. If all participants leave, you lose the game."
+autowrap = true
+
+[node name="StartGameTutorial" type="Panel" parent="Tutorials"]
+margin_left = 74.4
+margin_top = 110.0
+margin_right = 150.4
+margin_bottom = 177.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Tutorials/StartGameTutorial"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 5.0
+margin_right = 73.0
+margin_bottom = 44.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Tutorials/StartGameTutorial/MarginContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 142.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "Try to see how many points you can get keeping your virtual meetings alive. Press the start button to begin playing."
+autowrap = true
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="ShowTutorialButton" to="." method="_on_ShowTutorialButton_pressed"]
