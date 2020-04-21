@@ -84,7 +84,7 @@ func _input(event: InputEvent) -> void:
 			var next_character = text_to_type.substr(current_character_index, 1)
 
 			# If we typed the correct character
-			if key_press_string == next_character:
+			if key_press_string.to_lower() == next_character.to_lower():
 				current_character_index += 1
 
 				# If this was the last character - we finished
