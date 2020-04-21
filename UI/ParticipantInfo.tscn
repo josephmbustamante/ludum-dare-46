@@ -69,7 +69,7 @@ __meta__ = {
 margin_left = 5.0
 margin_top = 5.0
 margin_right = 115.0
-margin_bottom = 69.0
+margin_bottom = 62.0
 custom_constants/margin_right = 5
 custom_constants/margin_top = 5
 custom_constants/margin_left = 5
@@ -79,88 +79,102 @@ custom_constants/margin_bottom = 5
 margin_left = 5.0
 margin_top = 5.0
 margin_right = 105.0
-margin_bottom = 59.0
+margin_bottom = 52.0
 custom_constants/separation = 10
 
-[node name="ImageContainers" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-margin_right = 16.0
-margin_bottom = 54.0
+[node name="LeftSide" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_right = 30.0
+margin_bottom = 47.0
 alignment = 1
 
-[node name="ParticipantImage" type="TextureRect" parent="MarginContainer/HBoxContainer/ImageContainers"]
-margin_top = 17.0
-margin_right = 16.0
-margin_bottom = 37.0
+[node name="ImageContainers" type="VBoxContainer" parent="MarginContainer/HBoxContainer/LeftSide"]
+margin_top = 4.0
+margin_right = 30.0
+margin_bottom = 24.0
+
+[node name="ParticipantImage" type="TextureRect" parent="MarginContainer/HBoxContainer/LeftSide/ImageContainers"]
+margin_right = 30.0
+margin_bottom = 20.0
 texture = SubResource( 2 )
 stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ParticipantImage2" type="TextureRect" parent="MarginContainer/HBoxContainer/ImageContainers"]
+[node name="ParticipantImage2" type="TextureRect" parent="MarginContainer/HBoxContainer/LeftSide/ImageContainers"]
 visible = false
-margin_top = 24.0
+margin_top = -21.0
 margin_right = 18.0
-margin_bottom = 38.0
+margin_bottom = -7.0
 texture = SubResource( 3 )
 stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ParticipantImage3" type="TextureRect" parent="MarginContainer/HBoxContainer/ImageContainers"]
+[node name="ParticipantImage3" type="TextureRect" parent="MarginContainer/HBoxContainer/LeftSide/ImageContainers"]
 visible = false
-margin_top = 33.0
+margin_top = -12.0
 margin_right = 18.0
-margin_bottom = 53.0
+margin_bottom = 8.0
 texture = SubResource( 4 )
 stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ParticipantImage4" type="TextureRect" parent="MarginContainer/HBoxContainer/ImageContainers"]
+[node name="ParticipantImage4" type="TextureRect" parent="MarginContainer/HBoxContainer/LeftSide/ImageContainers"]
 visible = false
-margin_top = 45.0
 margin_right = 18.0
-margin_bottom = 61.0
+margin_bottom = 16.0
 texture = SubResource( 5 )
 stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ParticipantImage5" type="TextureRect" parent="MarginContainer/HBoxContainer/ImageContainers"]
+[node name="ParticipantImage5" type="TextureRect" parent="MarginContainer/HBoxContainer/LeftSide/ImageContainers"]
 visible = false
-margin_top = 55.0
+margin_top = 10.0
 margin_right = 18.0
-margin_bottom = 69.0
+margin_bottom = 24.0
 texture = SubResource( 6 )
 stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ParticipantImage6" type="TextureRect" parent="MarginContainer/HBoxContainer/ImageContainers"]
+[node name="ParticipantImage6" type="TextureRect" parent="MarginContainer/HBoxContainer/LeftSide/ImageContainers"]
 visible = false
-margin_top = 64.0
+margin_top = 19.0
 margin_right = 18.0
-margin_bottom = 78.0
+margin_bottom = 33.0
 texture = SubResource( 7 )
 stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-margin_left = 26.0
+[node name="ParticipantStatus" type="Label" parent="MarginContainer/HBoxContainer/LeftSide"]
+margin_top = 28.0
+margin_right = 30.0
+margin_bottom = 43.0
+rect_min_size = Vector2( 30, 0 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "!!!"
+
+[node name="RightSide" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_left = 40.0
 margin_right = 100.0
-margin_bottom = 54.0
+margin_bottom = 47.0
 size_flags_horizontal = 3
 
-[node name="ParticipantName" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_right = 74.0
-margin_bottom = 25.0
+[node name="ParticipantName" type="Label" parent="MarginContainer/HBoxContainer/RightSide"]
+margin_right = 60.0
+margin_bottom = 33.0
 size_flags_vertical = 7
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -171,20 +185,11 @@ Brown"
 align = 1
 valign = 1
 
-[node name="ParticipantEngagement" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 5 )]
-margin_top = 29.0
-margin_right = 74.0
-margin_bottom = 39.0
+[node name="ParticipantEngagement" parent="MarginContainer/HBoxContainer/RightSide" instance=ExtResource( 5 )]
+margin_top = 37.0
+margin_right = 60.0
+margin_bottom = 47.0
 rect_min_size = Vector2( 0, 10 )
 size_flags_vertical = 1
 custom_styles/fg = SubResource( 8 )
 custom_styles/bg = SubResource( 9 )
-
-[node name="ParticipantStatus" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 43.0
-margin_right = 74.0
-margin_bottom = 54.0
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
-text = "!!!"

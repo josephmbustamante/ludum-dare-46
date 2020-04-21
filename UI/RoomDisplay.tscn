@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://UI/FontSize16.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/FontSize24.tres" type="DynamicFont" id=1]
 [ext_resource path="res://UI/ColorProgressBar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/RoomDisplay.gd" type="Script" id=3]
 
@@ -46,15 +46,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WifiDisplay" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_right = 1024.0
-margin_bottom = 15.0
+margin_bottom = 114.0
 alignment = 2
 
-[node name="WifiLabel" type="Label" parent="WifiDisplay"]
-margin_left = 740.0
-margin_right = 870.0
-margin_bottom = 15.0
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 842.0
+margin_right = 1024.0
+margin_bottom = 114.0
+custom_constants/separation = 10
+alignment = 2
+
+[node name="WifiLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
+margin_right = 182.0
+margin_bottom = 22.0
 rect_min_size = Vector2( 130, 0 )
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -62,26 +68,19 @@ custom_constants/shadow_as_outline = 1
 text = "WIFI STRENGTH"
 uppercase = true
 
-[node name="WifiBar" parent="WifiDisplay" instance=ExtResource( 2 )]
-margin_left = 874.0
-margin_top = 0.0
-margin_right = 1024.0
-margin_bottom = 15.0
-rect_min_size = Vector2( 150, 0 )
+[node name="WifiBar" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 32.0
+margin_right = 182.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 150, 20 )
 size_flags_horizontal = 1
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
 
-[node name="StressDisplay" type="HBoxContainer" parent="."]
-margin_top = 35.0
-margin_right = 1024.0
-margin_bottom = 50.0
-alignment = 2
-
-[node name="StressLabel" type="Label" parent="StressDisplay"]
-margin_left = 740.0
-margin_right = 870.0
-margin_bottom = 15.0
+[node name="StressLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
+margin_top = 62.0
+margin_right = 182.0
+margin_bottom = 84.0
 rect_min_size = Vector2( 130, 0 )
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -89,12 +88,11 @@ custom_constants/shadow_as_outline = 1
 text = "STRESS LEVEL"
 uppercase = true
 
-[node name="StressBar" parent="StressDisplay" instance=ExtResource( 2 )]
-margin_left = 874.0
-margin_top = 0.0
-margin_right = 1024.0
-margin_bottom = 15.0
-rect_min_size = Vector2( 150, 0 )
+[node name="StressBar" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 94.0
+margin_right = 182.0
+margin_bottom = 114.0
+rect_min_size = Vector2( 150, 20 )
 size_flags_horizontal = 1
 custom_styles/fg = SubResource( 3 )
 custom_styles/bg = SubResource( 4 )

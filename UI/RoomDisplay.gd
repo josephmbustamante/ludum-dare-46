@@ -1,8 +1,8 @@
 extends VBoxContainer
 
 
-onready var wifi_progress = $WifiDisplay/WifiBar
-onready var stress_progress = $StressDisplay/StressBar
+onready var wifi_progress = $HBoxContainer/VBoxContainer/WifiBar
+onready var stress_progress = $HBoxContainer/VBoxContainer/StressBar
 
 
 func handle_wifi_level_changed(new_wifi_level):

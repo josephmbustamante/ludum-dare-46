@@ -1,14 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://UI/MeetingDisplay.gd" type="Script" id=1]
-[ext_resource path="res://Assets/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://UI/FontSize16.tres" type="DynamicFont" id=3]
-
-[sub_resource type="DynamicFont" id=1]
-size = 12
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+[ext_resource path="res://UI/FontSize24.tres" type="DynamicFont" id=2]
 
 [node name="MeetingDisplay" type="VBoxContainer"]
 margin_left = 89.0
@@ -21,17 +14,17 @@ __meta__ = {
 }
 
 [node name="ParticipantsDisplay" type="HBoxContainer" parent="."]
-margin_right = 209.0
+margin_right = 322.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 120, 60 )
 alignment = 1
 
 [node name="MeetingInfoLabel" type="Label" parent="."]
 margin_top = 65.0
-margin_right = 209.0
-margin_bottom = 80.0
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+margin_right = 322.0
+margin_bottom = 87.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.662745, 0.666667, 0.984314, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 2
 text = "CURRENT MEETING"
@@ -42,11 +35,13 @@ __meta__ = {
 }
 
 [node name="MeetingDurationLabel" type="Label" parent="."]
-margin_top = 85.0
-margin_right = 209.0
-margin_bottom = 96.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.498039, 0.498039, 0.498039, 1 )
+margin_top = 92.0
+margin_right = 322.0
+margin_bottom = 114.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
 text = "60 minutes remaining..."
 align = 1
 __meta__ = {

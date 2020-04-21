@@ -2,10 +2,10 @@ extends PanelContainer
 class_name ParticipantInfo
 
 
-onready var participant_name = $MarginContainer/HBoxContainer/VBoxContainer/ParticipantName
-onready var participant_engagement = $MarginContainer/HBoxContainer/VBoxContainer/ParticipantEngagement
-onready var participant_status = $MarginContainer/HBoxContainer/VBoxContainer/ParticipantStatus
-onready var image_containers = $MarginContainer/HBoxContainer/ImageContainers
+onready var participant_name = $MarginContainer/HBoxContainer/RightSide/ParticipantName
+onready var participant_engagement = $MarginContainer/HBoxContainer/RightSide/ParticipantEngagement
+onready var participant_status = $MarginContainer/HBoxContainer/LeftSide/ParticipantStatus
+onready var image_containers = $MarginContainer/HBoxContainer/LeftSide/ImageContainers
 
 
 func _ready() -> void:
