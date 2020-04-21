@@ -4,6 +4,7 @@ extends Node2D
 onready var prompt_text = $PromptText
 onready var input_text = $InputText
 onready var input_finished_clear_timer = $InputFinishedClearTimer
+onready var shift_forgiveness_timer = $ShiftForgivenessTimer
 
 
 var text_to_type: String = ""
@@ -60,17 +61,20 @@ func _input(event: InputEvent) -> void:
 		return
 
 	if event is InputEventKey and not event.is_pressed():
-		var a: InputEventKey = event
-		var key_code = OS.get_scancode_string(event.scancode)
+		var typed_event: InputEventKey = event
+		var key_code = OS.get_scancode_string(typed_event.scancode).to_lower()
 
 		# If we press Enter or Escape, exit, regardless of progress or session
-		if key_code == "Enter" or key_code == "Escape":
+		if key_code == "enter" or key_code == "escape":
 			# If enter or escape are hit, we never want the camera to shake (probably).
 			# But we only want to exit the prompt if it doesn't require completion.
 			if not requires_completion:
 				exit_typing_session()
 			else:
 				pass
+
+		if key_code == "shift":
+			shift_forgiveness_timer.start()
 
 		# If we aren't currently in a valid typing session, don't allow input
 		elif current_character_index == -1:
@@ -79,12 +83,12 @@ func _input(event: InputEvent) -> void:
 		# If we haven't finished typing yet and received a character, check if we are done
 		# or still have more to go
 		elif current_character_index < text_to_type.length():
-			var raw_data = PoolByteArray([a.unicode])
+			var raw_data = PoolByteArray([typed_event.unicode])
 			var key_press_string = raw_data.get_string_from_utf8()
 			var next_character = text_to_type.substr(current_character_index, 1)
 
 			# If we typed the correct character
-			if key_press_string == next_character:
+			if correct_character_was_typed(key_press_string, next_character):
 				current_character_index += 1
 
 				# If this was the last character - we finished
@@ -97,7 +101,7 @@ func _input(event: InputEvent) -> void:
 					input_text.parse_bbcode("[u][color=black]" + text_to_type.substr(0, current_character_index) + "[/color][/u]" + text_to_type.substr(current_character_index, -1))
 
 			else:
-				if key_code == "Shift":
+				if key_code == "shift":
 					pass
 				else:
 					print("INCORRECTLY TYPED %s instead of %s" % [key_press_string, next_character])
@@ -105,6 +109,15 @@ func _input(event: InputEvent) -> void:
 					emit_signal("input_incorrect")
 
 	get_tree().set_input_as_handled()
+
+
+func correct_character_was_typed(typed_character: String, next_character: String):
+	var is_shift_timer_going = shift_forgiveness_timer.time_left > 0
+
+	var characters_match: bool = typed_character == next_character
+	var characters_match_with_forgiveness: bool = is_shift_timer_going and typed_character.to_upper() == next_character.to_upper()
+	return characters_match or characters_match_with_forgiveness
+
 
 
 func _on_InputFinishedClearTimer_timeout() -> void:
