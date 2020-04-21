@@ -116,7 +116,12 @@ func correct_character_was_typed(typed_character: String, next_character: String
 
 	var characters_match: bool = typed_character == next_character
 	var characters_match_with_forgiveness: bool = is_shift_timer_going and typed_character.to_upper() == next_character.to_upper()
-	return characters_match or characters_match_with_forgiveness
+
+	# Unfortunately, exclamation marks and question marks aren't the uppercase version of 1 or /
+	# so this is the quick and dirty way to help those feel better too.
+	var characters_match_exclamation: bool = is_shift_timer_going and typed_character == "1" and next_character == "!"
+	var characters_match_question: bool = is_shift_timer_going and typed_character == "/" and next_character == "?"
+	return characters_match or characters_match_with_forgiveness or characters_match_exclamation or characters_match_question
 
 
 
