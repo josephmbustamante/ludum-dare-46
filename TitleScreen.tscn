@@ -117,10 +117,10 @@ position = Vector2( 8.99999, -20 )
 scale = Vector2( 2.5, 2.5 )
 
 [node name="InteractTutorial" type="Panel" parent="Tutorials"]
-margin_left = 324.4
-margin_top = 99.2
-margin_right = 398.4
-margin_bottom = 159.2
+margin_left = 220.4
+margin_top = 96.0
+margin_right = 318.4
+margin_bottom = 165.0
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -129,9 +129,9 @@ __meta__ = {
 [node name="Pointer2" type="TextureRect" parent="Tutorials/InteractTutorial"]
 modulate = Color( 0.513726, 0.52549, 0.576471, 1 )
 margin_left = 3.20001
-margin_top = 14.8
+margin_top = 33.6
 margin_right = 35.2
-margin_bottom = 54.8
+margin_bottom = 73.6
 rect_rotation = 90.0
 rect_scale = Vector2( 0.3, 0.3 )
 texture = SubResource( 5 )
@@ -144,8 +144,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 2.0
 margin_top = 5.0
-margin_right = 73.0
-margin_bottom = 44.0
+margin_right = 90.0
+margin_bottom = 54.0
 rect_scale = Vector2( 0.5, 0.5 )
 custom_constants/margin_right = 5
 custom_constants/margin_top = 5
@@ -158,8 +158,8 @@ __meta__ = {
 [node name="Label" type="Label" parent="Tutorials/InteractTutorial/MarginContainer"]
 margin_left = 5.0
 margin_top = 5.0
-margin_right = 140.0
-margin_bottom = 146.0
+margin_right = 181.0
+margin_bottom = 113.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
@@ -169,10 +169,10 @@ text = "Press E to interact with objects, and enter or escape to stop. Use WASD 
 autowrap = true
 
 [node name="ComputerTutorial" type="Panel" parent="Tutorials"]
-margin_left = 201.2
-margin_top = 48.0
-margin_right = 282.2
-margin_bottom = 128.0
+margin_left = 121.0
+margin_top = 5.0
+margin_right = 283.0
+margin_bottom = 66.0
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -180,11 +180,10 @@ __meta__ = {
 
 [node name="Pointer" type="TextureRect" parent="Tutorials/ComputerTutorial"]
 modulate = Color( 0.513726, 0.52549, 0.576471, 1 )
-margin_left = 3.20001
-margin_top = 25.6
-margin_right = 35.2
-margin_bottom = 65.6
-rect_rotation = 90.0
+margin_left = 56.2
+margin_top = 54.2
+margin_right = 88.2
+margin_bottom = 94.2
 rect_scale = Vector2( 0.3, 0.3 )
 texture = SubResource( 5 )
 __meta__ = {
@@ -196,8 +195,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 2.0
 margin_top = 5.0
-margin_right = 73.0
-margin_bottom = 44.0
+margin_right = 148.0
+margin_bottom = 55.0
 rect_scale = Vector2( 0.5, 0.5 )
 custom_constants/margin_right = 5
 custom_constants/margin_top = 5
@@ -210,8 +209,8 @@ __meta__ = {
 [node name="Label" type="Label" parent="Tutorials/ComputerTutorial/MarginContainer"]
 margin_left = 5.0
 margin_top = 5.0
-margin_right = 147.0
-margin_bottom = 236.0
+margin_right = 303.0
+margin_bottom = 106.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
@@ -221,10 +220,10 @@ text = "When a meeting is in session, participants will occasionally have questi
 autowrap = true
 
 [node name="BedTutorial" type="Panel" parent="Tutorials"]
-margin_left = 324.4
-margin_top = 25.6
-margin_right = 405.4
-margin_bottom = 105.6
+margin_left = 324.0
+margin_top = 11.0
+margin_right = 404.0
+margin_bottom = 125.0
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -235,8 +234,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 2.0
 margin_top = 5.0
-margin_right = 73.0
-margin_bottom = 44.0
+margin_right = 76.0
+margin_bottom = 109.0
 rect_scale = Vector2( 0.5, 0.5 )
 custom_constants/margin_right = 5
 custom_constants/margin_top = 5
@@ -249,8 +248,8 @@ __meta__ = {
 [node name="Label" type="Label" parent="Tutorials/BedTutorial/MarginContainer"]
 margin_left = 5.0
 margin_top = 5.0
-margin_right = 147.0
-margin_bottom = 200.0
+margin_right = 149.0
+margin_bottom = 213.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
@@ -261,10 +260,10 @@ autowrap = true
 
 [node name="Pointer2" type="TextureRect" parent="Tutorials/BedTutorial"]
 modulate = Color( 0.513726, 0.52549, 0.576471, 1 )
-margin_left = 3.80002
-margin_top = 52.2
-margin_right = 35.8
-margin_bottom = 92.2
+margin_left = 4.39999
+margin_top = 69.0
+margin_right = 36.4
+margin_bottom = 109.0
 rect_rotation = 90.0
 rect_scale = Vector2( 0.3, 0.3 )
 texture = SubResource( 5 )
@@ -273,10 +272,10 @@ __meta__ = {
 }
 
 [node name="RouterTutorial" type="Panel" parent="Tutorials"]
-margin_left = 17.6
-margin_top = 34.8
-margin_right = 95.6
-margin_bottom = 113.8
+margin_left = -2.0
+margin_top = 19.2
+margin_right = 94.0
+margin_bottom = 114.2
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -284,10 +283,10 @@ __meta__ = {
 
 [node name="Pointer3" type="TextureRect" parent="Tutorials/RouterTutorial"]
 modulate = Color( 0.513726, 0.52549, 0.576471, 1 )
-margin_left = 70.0
-margin_top = 53.2
-margin_right = 102.0
-margin_bottom = 93.2
+margin_left = 86.4
+margin_top = 70.4
+margin_right = 118.4
+margin_bottom = 110.4
 rect_rotation = -90.0
 rect_scale = Vector2( 0.3, 0.3 )
 texture = SubResource( 5 )
@@ -300,8 +299,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 2.0
 margin_top = 5.0
-margin_right = 73.0
-margin_bottom = 44.0
+margin_right = 84.0
+margin_bottom = 79.0
 rect_scale = Vector2( 0.5, 0.5 )
 custom_constants/margin_right = 5
 custom_constants/margin_top = 5
@@ -314,8 +313,8 @@ __meta__ = {
 [node name="Label" type="Label" parent="Tutorials/RouterTutorial/MarginContainer"]
 margin_left = 5.0
 margin_top = 5.0
-margin_right = 144.0
-margin_bottom = 218.0
+margin_right = 173.0
+margin_bottom = 164.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
@@ -325,10 +324,10 @@ text = "Your WiFi strength will go down over time. If it hits 0, you won't be ab
 autowrap = true
 
 [node name="EngagementTutorial" type="Panel" parent="Tutorials"]
-margin_left = 281.2
-margin_top = 166.4
-margin_right = 403.2
-margin_bottom = 225.4
+margin_left = 281.0
+margin_top = 166.0
+margin_right = 403.0
+margin_bottom = 246.0
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -354,21 +353,21 @@ __meta__ = {
 margin_left = 5.0
 margin_top = 5.0
 margin_right = 223.0
-margin_bottom = 146.0
+margin_bottom = 128.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
-text = "Meetings will automatically start every 10 seconds, and last for 30 seconds. Each participant has an engagement level - if that hits 0, they'll leave the meeting."
+text = "Meetings automatically start every 10 seconds, and go for 30 seconds. Each participant has an engagement level - if that hits 0, they'll leave the meeting."
 autowrap = true
 
 [node name="Pointer2" type="TextureRect" parent="Tutorials/EngagementTutorial"]
 modulate = Color( 0.513726, 0.52549, 0.576471, 1 )
-margin_left = 4.80002
-margin_top = 44.8
-margin_right = 36.8
-margin_bottom = 84.8
+margin_left = 3.39999
+margin_top = 40.4
+margin_right = 35.4
+margin_bottom = 80.4
 rect_rotation = 90.0
 rect_scale = Vector2( 0.3, 0.3 )
 texture = SubResource( 5 )
@@ -377,10 +376,10 @@ __meta__ = {
 }
 
 [node name="PointsTutorial" type="Panel" parent="Tutorials"]
-margin_left = 2.8
-margin_top = 172.8
-margin_right = 127.8
-margin_bottom = 228.8
+margin_left = 1.2
+margin_top = 140.8
+margin_right = 122.2
+margin_bottom = 219.8
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -391,8 +390,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 2.0
 margin_top = 5.0
-margin_right = 114.0
-margin_bottom = 44.0
+margin_right = 110.0
+margin_bottom = 61.0
 rect_scale = Vector2( 0.5, 0.5 )
 custom_constants/margin_right = 5
 custom_constants/margin_top = 5
@@ -405,74 +404,22 @@ __meta__ = {
 [node name="Label" type="Label" parent="Tutorials/PointsTutorial/MarginContainer"]
 margin_left = 5.0
 margin_top = 5.0
-margin_right = 232.0
-margin_bottom = 128.0
+margin_right = 224.0
+margin_bottom = 130.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
-text = "You get points for how engaged you keep people during a meeting. If a participant leaves the meeting, you lose points. If all participants leave, you lose the game."
+text = "You get points for completing meetings. If a participant leaves the meeting, you lose points. If all participants leave, you lose the game."
 autowrap = true
 
 [node name="Pointer2" type="TextureRect" parent="Tutorials/PointsTutorial"]
 modulate = Color( 0.513726, 0.52549, 0.576471, 1 )
-margin_left = 56.0
-margin_top = 46.4
-margin_right = 88.0
-margin_bottom = 86.4
-rect_scale = Vector2( 0.3, 0.3 )
-texture = SubResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="StartGameTutorial" type="Panel" parent="Tutorials"]
-margin_left = 74.4
-margin_top = 110.0
-margin_right = 150.4
-margin_bottom = 177.0
-custom_styles/panel = SubResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MarginContainer" type="MarginContainer" parent="Tutorials/StartGameTutorial"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 2.0
-margin_top = 5.0
-margin_right = 73.0
-margin_bottom = 44.0
-rect_scale = Vector2( 0.5, 0.5 )
-custom_constants/margin_right = 5
-custom_constants/margin_top = 5
-custom_constants/margin_left = 5
-custom_constants/margin_bottom = 5
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Tutorials/StartGameTutorial/MarginContainer"]
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 142.0
-margin_bottom = 146.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
-text = "Try to see how many points you can get keeping your virtual meetings alive. Press the start button to begin playing."
-autowrap = true
-
-[node name="Pointer2" type="TextureRect" parent="Tutorials/StartGameTutorial"]
-modulate = Color( 0.513726, 0.52549, 0.576471, 1 )
-margin_left = 67.6
-margin_top = 48.4
-margin_right = 99.6
-margin_bottom = 88.4
-rect_rotation = -90.0
+margin_left = 55.6
+margin_top = 72.4
+margin_right = 87.6
+margin_bottom = 112.4
 rect_scale = Vector2( 0.3, 0.3 )
 texture = SubResource( 5 )
 __meta__ = {
