@@ -42,7 +42,7 @@ custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
-text = "60 minutes remaining..."
+text = "60 seconds remaining"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

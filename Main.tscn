@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://wall_and_floor_tileset.tres" type="TileSet" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Assets/uipack_fixed/Vector/UIpack_vector.svg" type="Texture" id=21]
 [ext_resource path="res://UI/FontSize42.tres" type="DynamicFont" id=22]
 [ext_resource path="res://GameOverPanel.gd" type="Script" id=23]
+[ext_resource path="res://UI/FontSize24.tres" type="DynamicFont" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 6 )
@@ -199,14 +200,14 @@ zoom = Vector2( 0.4, 0.4 )
 script = ExtResource( 16 )
 
 [node name="VirtualMeetingSimulatorLabel" type="Label" parent="."]
-margin_left = 147.0
-margin_top = 16.0
-margin_right = 372.0
-margin_bottom = 49.0
+margin_left = 116.0
+margin_top = 14.0
+margin_right = 466.0
+margin_bottom = 47.0
 rect_scale = Vector2( 0.5, 0.5 )
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0.607843, 0.611765, 0.709804, 1 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
 text = "VIRTUAL MEETING SIMULATOR"
 align = 1

@@ -18,11 +18,11 @@ func _ready() -> void:
 
 func set_time_until_next_meeting_text(time_until_next_meeting: int):
 	meeting_info_label.text = NO_MEETING_TEXT
-	meeting_duration_label.text = " Next meeting begins in %d..." % time_until_next_meeting
+	meeting_duration_label.text = " Next meeting begins in %d" % time_until_next_meeting
 
 
 func set_time_remaining_in_meeting_text(time_remaining_in_meeting: int):
-	meeting_duration_label.text = "%d seconds remaining..." % time_remaining_in_meeting
+	meeting_duration_label.text = "%d seconds remaining" % time_remaining_in_meeting
 
 
 func set_meeting_display(meeting: Meeting):
