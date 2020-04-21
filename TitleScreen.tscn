@@ -1,11 +1,23 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://UI/FontSize12.tres" type="DynamicFont" id=1]
 [ext_resource path="res://UI/FontSize24.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/uipack_fixed/Vector/UIpack_vector.svg" type="Texture" id=3]
 [ext_resource path="res://TitleScreen.gd" type="Script" id=4]
-[ext_resource path="res://Assets/title-background-with-meeting-and-room-status.png" type="Texture" id=5]
+[ext_resource path="res://UI/FontSize42.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Assets/sounds/intro.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/actual-title-image-use-this.png" type="Texture" id=7]
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 304, 104, 112 )
+margin_left = 12.3478
+margin_right = 13.9411
+margin_top = 17.1276
+margin_bottom = 17.9242
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+modulate_color = Color( 0.509804, 0.521569, 0.580392, 1 )
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 3 )
@@ -34,17 +46,6 @@ margin_top = 8.40136
 margin_bottom = 14.2823
 modulate_color = Color( 0.388235, 0.392157, 0.439216, 1 )
 
-[sub_resource type="StyleBoxTexture" id=4]
-texture = ExtResource( 3 )
-region_rect = Rect2( 0, 304, 104, 112 )
-margin_left = 12.3478
-margin_right = 13.9411
-margin_top = 17.1276
-margin_bottom = 17.9242
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-modulate_color = Color( 0.509804, 0.521569, 0.580392, 1 )
-
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 3 )
 region = Rect2( 940, 444, 32, 40 )
@@ -53,10 +54,34 @@ region = Rect2( 940, 444, 32, 40 )
 script = ExtResource( 4 )
 
 [node name="BackgroundImage" type="Sprite" parent="."]
+modulate = Color( 0.639216, 0.686275, 0.933333, 0.196078 )
 position = Vector2( 2.00001, 0 )
 scale = Vector2( 1.00196, 1.00334 )
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 centered = false
+
+[node name="TitleBackground" type="Panel" parent="."]
+margin_left = 184.0
+margin_top = 16.0
+margin_right = 832.0
+margin_bottom = 104.0
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_left = 196.0
+margin_top = 36.0
+margin_right = 821.0
+margin_bottom = 73.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "VIRTUAL MEETING SIMULATOR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PlayButton" type="Button" parent="."]
 margin_left = 388.0
